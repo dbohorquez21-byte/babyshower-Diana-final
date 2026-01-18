@@ -22,24 +22,30 @@ body{
   padding:40px 25px;
 }
 
-/* BLOQUES TEXTO + IMAGEN */
+/* FILAS TEXTO + IMAGEN */
 .row{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  gap:22px;
   margin:45px 0;
+  overflow:hidden;
 }
 
 .row.reverse{
   flex-direction:row-reverse;
 }
 
+/* IMÁGENES CONTROLADAS */
 .row img{
-  width:40%;
-  max-width:180px;
+  width:100%;
+  max-width:160px;
+  height:auto;
+  object-fit:contain;
+  flex-shrink:0;
 }
 
+/* TEXTO */
 .text{
   width:60%;
   font-size:15px;
@@ -85,6 +91,14 @@ body{
   color:#6b5a45;
   text-decoration:none;
   font-size:14px;
+  border:none;
+  cursor:pointer;
+}
+
+/* CONTADOR */
+.countdown{
+  font-weight:500;
+  margin-top:8px;
 }
 
 /* FOOTER */
@@ -102,7 +116,13 @@ body{
     flex-direction:column;
     text-align:center;
   }
-  .row img, .text{
+
+  .row img{
+    max-width:220px;
+    margin-top:20px;
+  }
+
+  .text{
     width:100%;
   }
 }
@@ -132,8 +152,19 @@ body{
     <img src="48f7b33e-db36-4456-8fe7-93dcc49e1da0.png" alt="Pooh tierno">
   </div>
 
-  <!-- FECHA Y HORA -->
+  <!-- MÚSICA -->
   <div class="row">
+    <div class="text">
+      Escucha la canción que le ponemos<br>
+      en la pancita y que le encanta 🎶
+      <br><br>
+      <button class="button" onclick="playMusic()">Reproducir música</button>
+    </div>
+    <img src="b93bcb84-9844-40db-8e49-f6255aa34174.png" alt="Pooh escuchando">
+  </div>
+
+  <!-- FECHA -->
+  <div class="row reverse">
     <div class="text date">
       <div>Marzo</div>
       <div class="number">21</div>
@@ -144,19 +175,10 @@ body{
   </div>
 
   <!-- CONTADOR -->
-  <div class="row reverse">
-    <div class="text">
-      <strong>Solo falta…</strong><br>
-      <span id="countdown"></span>
-    </div>
-    <img src="b93bcb84-9844-40db-8e49-f6255aa34174.png" alt="Pooh grande">
-  </div>
-
-  <!-- REGALO -->
   <div class="row">
     <div class="text">
-      Si deseas obsequiarnos algo,<br>
-      cualquier detalle será recibido con mucho amor.
+      <strong>Solo falta…</strong>
+      <div id="countdown" class="countdown"></div>
     </div>
     <img src="abf7d5f8-badb-43af-abca-3549a7f7f24b.png" alt="Pooh miel">
   </div>
@@ -168,9 +190,9 @@ body{
       será muy especial contar contigo.
       <br><br>
       <a class="button"
-        href="https://wa.me/573223758532?text=Confirmo%20mi%20asistencia%20al%20baby%20shower"
-        target="_blank">
-        Confirmar asistencia
+         href="https://wa.me/573223758532?text=Confirmo%20mi%20asistencia%20al%20baby%20shower"
+         target="_blank">
+         Confirmar asistencia
       </a>
     </div>
     <img src="9d15c4b6-5aa6-4b2b-aafa-bf1e3caaff10.png" alt="Pooh amigos">
@@ -180,7 +202,20 @@ body{
 
 </div>
 
+<!-- AUDIO -->
+<audio id="music">
+  <!-- Puedes cambiar esta URL por tu canción -->
+  <source src="https://cdn.pixabay.com/audio/2022/10/18/audio_6a9b33e1a1.mp3" type="audio/mpeg">
+</audio>
+
 <script>
+/* MUSICA (requiere interacción del usuario) */
+function playMusic(){
+  const music = document.getElementById("music");
+  music.play();
+}
+
+/* CONTADOR */
 const eventDate = new Date("March 21, 2026 15:00:00").getTime();
 setInterval(()=>{
   const now = new Date().getTime();
