@@ -1,197 +1,68 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Baby Shower Diana</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Allura&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-body{
-  margin:0;
-  background:#f9f6f1;
-  color:#7a6a55;
-  font-family:'Montserrat', sans-serif;
-}
-
-.invite{
-  max-width:430px;
-  margin:auto;
-  padding:40px 25px;
-  text-align:center;
-}
-
-.hero{
-  position:relative;
-}
-
-.hero img{
-  width:75%;
-  margin:auto;
-}
-
-.baby-text{
-  font-family:'Playfair Display', serif;
-  font-size:72px;
-  color:#c7dce6;
-  letter-spacing:8px;
-  position:absolute;
-  top:30%;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:-1;
-}
-
-.script{
-  font-family:'Allura', cursive;
-  font-size:38px;
-  color:#c9a24d;
-}
-
-.name{
-  margin-top:10px;
-  font-size:42px;
-}
-
-.text{
-  margin:25px 0;
-  line-height:1.5;
-  font-size:15px;
-}
-
-.divider{
-  margin:30px 0;
-  height:1px;
-  background:#d8cfc2;
-}
-
-.date{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:15px;
-  font-family:'Playfair Display', serif;
-}
-
-.date .day{
-  font-size:16px;
-}
-
-.date .number{
-  font-size:42px;
-  color:#a8c7d8;
-}
-
-.date .time{
-  font-size:16px;
-}
-
-.countdown{
-  margin-top:15px;
-  font-size:15px;
-}
-
-.button{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 28px;
-  border-radius:30px;
-  background:#c7dce6;
-  color:#6b5a45;
-  text-decoration:none;
-  font-size:14px;
-}
-
-.footer{
-  margin-top:35px;
-  font-family:'Allura', cursive;
-  font-size:32px;
-  color:#c9a24d;
-}
-</style>
-</head>
-
 <body>
 
 <div class="invite">
 
   <!-- HERO -->
-  <div class="hero">
-    <div class="baby-text">BABY</div>
-    <img src="pooh-globos.png">
+  <div class="row">
+    <div class="text">
+      <h1 class="script">Baby Shower</h1>
+      <h2 class="name">Diana</h2>
+    </div>
+    <img src="0b4a2803-f05e-4c59-a142-b9432f145c51.png" alt="Pooh con globos">
   </div>
 
-  <div class="script">Baby Shower</div>
-  <div class="script name">Diana</div>
-
-  <div class="text">
-    Nuestro amor se multiplica y en nuestra familia<br>
-    habrá una sonrisa más iluminando nuestras vidas.
+  <!-- TEXTO EMOCIONAL -->
+  <div class="row reverse">
+    <div class="text">
+      Nuestro amor se multiplica y en nuestra familia<br>
+      habrá una sonrisa más iluminando nuestras vidas.
+    </div>
+    <img src="48f7b33e-db36-4456-8fe7-93dcc49e1da0.png" alt="Pooh tierno">
   </div>
 
-  <div class="divider"></div>
-
-  <!-- FECHA -->
-  <div class="date">
-    <div class="day">Marzo</div>
-    <div class="number">21</div>
-    <div class="time">3:00 p.m.</div>
+  <!-- FECHA Y HORA -->
+  <div class="row">
+    <div class="text">
+      <strong>📅 Marzo 21</strong><br>
+      <strong>⏰ 3:00 p.m.</strong><br>
+      <span>2026</span>
+    </div>
+    <img src="c8f24681-a0de-4025-8f5b-a1b7dc30a2de.png" alt="Pooh con globo">
   </div>
 
-  <div class="text">2026</div>
-
-  <div class="countdown">
-    Solo falta… <span id="countdown"></span>
+  <!-- CONTADOR -->
+  <div class="row reverse">
+    <div class="text">
+      <strong>Solo falta…</strong><br>
+      <span id="countdown"></span>
+    </div>
+    <img src="b93bcb84-9844-40db-8e49-f6255aa34174.png" alt="Pooh grande">
   </div>
-
-  <div class="divider"></div>
-
-  <!-- UBICACIÓN -->
-  <div class="text">
-    Salón Conjunto Residencial<br>
-    Torres de Castello
-  </div>
-
-  <a class="button" target="_blank"
-  href="https://www.google.com/maps/place/Conjunto+Residencial+Torres+de+Castello">
-    Ver ubicación
-  </a>
-
-  <div class="divider"></div>
 
   <!-- REGALO -->
-  <div class="text">
-    Si deseas obsequiarnos algo,<br>
-    cualquier detalle será recibido con mucho amor.
+  <div class="row">
+    <div class="text">
+      Si deseas obsequiarnos algo,<br>
+      cualquier detalle será recibido con mucho amor.
+    </div>
+    <img src="abf7d5f8-badb-43af-abca-3549a7f7f24b.png" alt="Pooh miel">
   </div>
 
   <!-- CONFIRMACIÓN -->
-  <a class="button" target="_blank"
-  href="https://wa.me/573223758532?text=Confirmo%20mi%20asistencia%20al%20baby%20shower">
-    Confirmar asistencia
-  </a>
-
-  <div class="footer">Te esperamos</div>
+  <div class="row reverse">
+    <div class="text">
+      Confírmanos tu asistencia,<br>
+      será muy especial contar contigo.
+      <br><br>
+      <a class="button"
+        href="https://wa.me/573223758532?text=Confirmo%20mi%20asistencia%20al%20baby%20shower"
+        target="_blank">
+        Confirmar asistencia
+      </a>
+    </div>
+    <img src="9d15c4b6-5aa6-4b2b-aafa-bf1e3caaff10.png" alt="Pooh amigos">
+  </div>
 
 </div>
 
-<script>
-const eventDate = new Date("March 21, 2026 15:00:00").getTime();
-setInterval(()=>{
-  const now = new Date().getTime();
-  const d = eventDate - now;
-  if(d < 0) return;
-
-  const days = Math.floor(d/(1000*60*60*24));
-  const h = Math.floor((d%(1000*60*60*24))/(1000*60*60));
-  const m = Math.floor((d%(1000*60*60))/(1000*60));
-  const s = Math.floor((d%(1000*60))/1000);
-
-  document.getElementById("countdown").innerHTML =
-    `${days} días · ${h}h · ${m}m · ${s}s`;
-},1000);
-</script>
-
 </body>
-</html>
