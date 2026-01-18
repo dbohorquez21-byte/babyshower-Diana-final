@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baby Shower Diana</title>
 
-<!-- Tipografías similares al diseño -->
+<!-- Tipografías -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Allura&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -21,15 +21,8 @@ body{
   margin:auto;
   padding:30px 25px 50px;
   text-align:center;
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
-    repeating-linear-gradient(
-      0deg,
-      #f0ece5,
-      #f0ece5 2px,
-      #f8f5ef 2px,
-      #f8f5ef 6px
-    );
+  background:#f9f6f1;
+  position:relative;
 }
 
 /* HERO */
@@ -55,30 +48,29 @@ body{
   z-index:-1;
 }
 
-/* TITULOS */
+/* Decorativos */
+.decor{
+  width:120px;
+  margin:20px auto;
+}
+
+/* Titulos */
 .script{
   font-family:'Allura', cursive;
   color:#c9a24d;
 }
 
-.title{
-  font-size:34px;
-  margin-top:-10px;
-}
+.title{ font-size:34px; }
+.name{ font-size:42px; }
 
-.name{
-  font-size:42px;
-  margin:5px 0 10px;
-}
-
-/* TEXTO */
+/* Texto */
 .text{
   font-size:14.5px;
   line-height:1.6;
   margin:18px 0;
 }
 
-/* DIVISORES */
+/* Lineas */
 .line{
   width:70%;
   height:1px;
@@ -86,7 +78,7 @@ body{
   margin:22px auto;
 }
 
-/* FECHA */
+/* Fecha */
 .date{
   margin:18px 0;
 }
@@ -104,7 +96,8 @@ body{
   margin:6px 0;
 }
 
-.date-row .day{
+.date-row .day,
+.date-row .time{
   border-bottom:1px solid #c9a24d;
   padding-bottom:2px;
 }
@@ -115,25 +108,12 @@ body{
   color:#a8c7d8;
 }
 
-.date-row .time{
-  border-bottom:1px solid #c9a24d;
-  padding-bottom:2px;
-}
-
 .year{
   font-size:14px;
   letter-spacing:2px;
-  margin-top:6px;
 }
 
-/* CONTADOR */
-.countdown{
-  font-size:14px;
-  margin-top:10px;
-  font-weight:500;
-}
-
-/* BOTONES */
+/* Botones */
 .buttons{
   display:flex;
   gap:12px;
@@ -151,7 +131,7 @@ body{
   font-size:13px;
 }
 
-/* FOOTER */
+/* Footer */
 .footer{
   margin-top:25px;
   font-family:'Allura', cursive;
@@ -159,7 +139,7 @@ body{
   color:#c9a24d;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media(max-width:480px){
   .hero img{ width:85%; }
   .hero .baby{ font-size:60px; }
@@ -171,7 +151,7 @@ body{
 
 <div class="flyer">
 
-  <!-- HERO -->
+  <!-- HERO (Imagen 1) -->
   <div class="hero">
     <div class="baby">BABY</div>
     <img src="0b4a2803-f05e-4c59-a142-b9432f145c51.png" alt="Pooh con globos">
@@ -180,14 +160,20 @@ body{
   <div class="script title">Baby Shower</div>
   <div class="script name">Diana</div>
 
+  <!-- Decorativo 2 -->
+  <img class="decor" src="c8f24681-a0de-4025-8f5b-a1b7dc30a2de.png" alt="Decoración globo">
+
   <div class="text">
     Nuestro amor se multiplica y en nuestra familia<br>
     habrá una sonrisa más iluminando nuestras vidas.
   </div>
 
+  <!-- Imagen 3 -->
+  <img class="decor" src="48f7b33e-db36-4456-8fe7-93dcc49e1da0.png" alt="Pooh tierno">
+
   <div class="line"></div>
 
-  <!-- FECHA -->
+  <!-- Fecha -->
   <div class="date">
     <div class="month">MARZO</div>
     <div class="date-row">
@@ -198,14 +184,17 @@ body{
     <div class="year">2026</div>
   </div>
 
-  <!-- CONTADOR -->
-  <div class="countdown">
+  <!-- Imagen 4 -->
+  <img class="decor" src="b93bcb84-9844-40db-8e49-f6255aa34174.png" alt="Pooh feliz">
+
+  <!-- Contador -->
+  <div class="text">
     Solo falta… <span id="countdown"></span>
   </div>
 
   <div class="line"></div>
 
-  <!-- UBICACIÓN -->
+  <!-- Ubicación -->
   <div class="text">
     Salón Conjunto Residencial<br>
     Torres de Castello
@@ -218,15 +207,21 @@ body{
     </a>
   </div>
 
+  <!-- Imagen 5 -->
+  <img class="decor" src="abf7d5f8-badb-43af-abca-3549a7f7f24b.png" alt="Pooh con miel">
+
   <div class="line"></div>
 
-  <!-- REGALO -->
+  <!-- Regalo -->
   <div class="text">
     Si deseas obsequiarnos algo,<br>
     cualquier detalle será recibido con mucho amor.
   </div>
 
-  <!-- CONFIRMACIÓN -->
+  <!-- Imagen 6 -->
+  <img class="decor" src="9d15c4b6-5aa6-4b2b-aafa-bf1e3caaff10.png" alt="Pooh y amigos">
+
+  <!-- Confirmación -->
   <div class="buttons">
     <a class="button" target="_blank"
        href="https://wa.me/573223758532?text=Confirmo%20mi%20asistencia%20al%20baby%20shower">
@@ -238,32 +233,15 @@ body{
 
 </div>
 
-<!-- AUDIO -->
-<audio id="music">
-  <source src="https://cdn.pixabay.com/audio/2022/10/18/audio_6a9b33e1a1.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-/* CONTADOR */
 const eventDate = new Date("March 21, 2026 15:00:00").getTime();
 setInterval(()=>{
   const now = new Date().getTime();
   const diff = eventDate - now;
-
   if(diff < 0){
     document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
     return;
   }
-
   const d = Math.floor(diff/(1000*60*60*24));
   const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-  const m = Math.floor((diff%(1000*60*60))/(1000*60));
-  const s = Math.floor((diff%(1000*60))/1000);
-
-  document.getElementById("countdown").innerHTML =
-    `${d} días · ${h}h · ${m}m · ${s}s`;
-},1000);
-</script>
-
-</body>
-</html>
+  const m = Math
