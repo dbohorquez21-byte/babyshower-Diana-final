@@ -5,197 +5,233 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baby Shower Diana</title>
 
-<!-- Tipografías -->
+<!-- Tipografías similares al diseño -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Allura&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
-  background:#f9f6f1;
-  color:#7a6a55;
+  background:#f8f5ef;
   font-family:'Montserrat', sans-serif;
+  color:#8a7a62;
 }
 
-.invite{
+.flyer{
   max-width:430px;
   margin:auto;
-  padding:40px 25px;
+  padding:30px 25px 50px;
+  text-align:center;
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+    repeating-linear-gradient(
+      0deg,
+      #f0ece5,
+      #f0ece5 2px,
+      #f8f5ef 2px,
+      #f8f5ef 6px
+    );
 }
 
-/* FILAS TEXTO + IMAGEN */
-.row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:22px;
-  margin:45px 0;
-  overflow:hidden;
+/* HERO */
+.hero{
+  position:relative;
+  margin-bottom:10px;
 }
 
-.row.reverse{
-  flex-direction:row-reverse;
+.hero img{
+  width:75%;
+  max-width:300px;
 }
 
-/* IMÁGENES CONTROLADAS */
-.row img{
-  width:100%;
-  max-width:160px;
-  height:auto;
-  object-fit:contain;
-  flex-shrink:0;
-}
-
-/* TEXTO */
-.text{
-  width:60%;
-  font-size:15px;
-  line-height:1.5;
+.hero .baby{
+  position:absolute;
+  top:38%;
+  left:50%;
+  transform:translateX(-50%);
+  font-family:'Playfair Display', serif;
+  font-size:70px;
+  letter-spacing:8px;
+  color:#cfe3ee;
+  z-index:-1;
 }
 
 /* TITULOS */
-.baby{
-  font-family:'Playfair Display', serif;
-  font-size:64px;
-  color:#c7dce6;
-  letter-spacing:6px;
-}
-
 .script{
   font-family:'Allura', cursive;
-  font-size:38px;
   color:#c9a24d;
+}
+
+.title{
+  font-size:34px;
+  margin-top:-10px;
 }
 
 .name{
   font-size:42px;
+  margin:5px 0 10px;
+}
+
+/* TEXTO */
+.text{
+  font-size:14.5px;
+  line-height:1.6;
+  margin:18px 0;
+}
+
+/* DIVISORES */
+.line{
+  width:70%;
+  height:1px;
+  background:#d8cfc2;
+  margin:22px auto;
 }
 
 /* FECHA */
 .date{
-  font-family:'Playfair Display', serif;
-  font-size:18px;
+  margin:18px 0;
 }
 
-.number{
-  font-size:40px;
+.date .month{
+  font-size:16px;
+  letter-spacing:2px;
+}
+
+.date-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin:6px 0;
+}
+
+.date-row .day{
+  border-bottom:1px solid #c9a24d;
+  padding-bottom:2px;
+}
+
+.date-row .number{
+  font-family:'Playfair Display', serif;
+  font-size:42px;
   color:#a8c7d8;
 }
 
-/* BOTONES */
-.button{
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 26px;
-  border-radius:30px;
-  background:#c7dce6;
-  color:#6b5a45;
-  text-decoration:none;
+.date-row .time{
+  border-bottom:1px solid #c9a24d;
+  padding-bottom:2px;
+}
+
+.year{
   font-size:14px;
-  border:none;
-  cursor:pointer;
+  letter-spacing:2px;
+  margin-top:6px;
 }
 
 /* CONTADOR */
 .countdown{
+  font-size:14px;
+  margin-top:10px;
   font-weight:500;
-  margin-top:8px;
+}
+
+/* BOTONES */
+.buttons{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  margin:20px 0;
+}
+
+.button{
+  padding:10px 20px;
+  border-radius:25px;
+  border:1px solid #a8c7d8;
+  background:#cfe3ee;
+  color:#6f5f4a;
+  text-decoration:none;
+  font-size:13px;
 }
 
 /* FOOTER */
 .footer{
-  text-align:center;
-  margin-top:40px;
+  margin-top:25px;
   font-family:'Allura', cursive;
-  font-size:32px;
+  font-size:30px;
   color:#c9a24d;
 }
 
 /* RESPONSIVE */
-@media(max-width:600px){
-  .row, .row.reverse{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .row img{
-    max-width:220px;
-    margin-top:20px;
-  }
-
-  .text{
-    width:100%;
-  }
+@media(max-width:480px){
+  .hero img{ width:85%; }
+  .hero .baby{ font-size:60px; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="invite">
+<div class="flyer">
 
   <!-- HERO -->
-  <div class="row">
-    <div class="text">
-      <div class="baby">BABY</div>
-      <div class="script">Baby Shower</div>
-      <div class="script name">Diana</div>
-    </div>
+  <div class="hero">
+    <div class="baby">BABY</div>
     <img src="0b4a2803-f05e-4c59-a142-b9432f145c51.png" alt="Pooh con globos">
   </div>
 
-  <!-- TEXTO EMOCIONAL -->
-  <div class="row reverse">
-    <div class="text">
-      Nuestro amor se multiplica y en nuestra familia<br>
-      habrá una sonrisa más iluminando nuestras vidas.
-    </div>
-    <img src="48f7b33e-db36-4456-8fe7-93dcc49e1da0.png" alt="Pooh tierno">
+  <div class="script title">Baby Shower</div>
+  <div class="script name">Diana</div>
+
+  <div class="text">
+    Nuestro amor se multiplica y en nuestra familia<br>
+    habrá una sonrisa más iluminando nuestras vidas.
   </div>
 
-  <!-- MÚSICA -->
-  <div class="row">
-    <div class="text">
-      Escucha la canción que le ponemos<br>
-      en la pancita y que le encanta 🎶
-      <br><br>
-      <button class="button" onclick="playMusic()">Reproducir música</button>
-    </div>
-    <img src="b93bcb84-9844-40db-8e49-f6255aa34174.png" alt="Pooh escuchando">
-  </div>
+  <div class="line"></div>
 
   <!-- FECHA -->
-  <div class="row reverse">
-    <div class="text date">
-      <div>Marzo</div>
+  <div class="date">
+    <div class="month">MARZO</div>
+    <div class="date-row">
+      <div class="day">SÁBADO</div>
       <div class="number">21</div>
-      <div>3:00 p.m.</div>
-      <div>2026</div>
+      <div class="time">3:00 P.M.</div>
     </div>
-    <img src="c8f24681-a0de-4025-8f5b-a1b7dc30a2de.png" alt="Pooh globo">
+    <div class="year">2026</div>
   </div>
 
   <!-- CONTADOR -->
-  <div class="row">
-    <div class="text">
-      <strong>Solo falta…</strong>
-      <div id="countdown" class="countdown"></div>
-    </div>
-    <img src="abf7d5f8-badb-43af-abca-3549a7f7f24b.png" alt="Pooh miel">
+  <div class="countdown">
+    Solo falta… <span id="countdown"></span>
+  </div>
+
+  <div class="line"></div>
+
+  <!-- UBICACIÓN -->
+  <div class="text">
+    Salón Conjunto Residencial<br>
+    Torres de Castello
+  </div>
+
+  <div class="buttons">
+    <a class="button" target="_blank"
+       href="https://www.google.com/maps/place/Conjunto+Residencial+Torres+de+Castello">
+       Ver ubicación
+    </a>
+  </div>
+
+  <div class="line"></div>
+
+  <!-- REGALO -->
+  <div class="text">
+    Si deseas obsequiarnos algo,<br>
+    cualquier detalle será recibido con mucho amor.
   </div>
 
   <!-- CONFIRMACIÓN -->
-  <div class="row reverse">
-    <div class="text">
-      Confírmanos tu asistencia,<br>
-      será muy especial contar contigo.
-      <br><br>
-      <a class="button"
-         href="https://wa.me/573223758532?text=Confirmo%20mi%20asistencia%20al%20baby%20shower"
-         target="_blank">
-         Confirmar asistencia
-      </a>
-    </div>
-    <img src="9d15c4b6-5aa6-4b2b-aafa-bf1e3caaff10.png" alt="Pooh amigos">
+  <div class="buttons">
+    <a class="button" target="_blank"
+       href="https://wa.me/573223758532?text=Confirmo%20mi%20asistencia%20al%20baby%20shower">
+       Confirmar asistencia
+    </a>
   </div>
 
   <div class="footer">Te esperamos</div>
@@ -204,17 +240,10 @@ body{
 
 <!-- AUDIO -->
 <audio id="music">
-  <!-- Puedes cambiar esta URL por tu canción -->
   <source src="https://cdn.pixabay.com/audio/2022/10/18/audio_6a9b33e1a1.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-/* MUSICA (requiere interacción del usuario) */
-function playMusic(){
-  const music = document.getElementById("music");
-  music.play();
-}
-
 /* CONTADOR */
 const eventDate = new Date("March 21, 2026 15:00:00").getTime();
 setInterval(()=>{
