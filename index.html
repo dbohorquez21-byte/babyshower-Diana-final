@@ -1,75 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baby Shower Diana</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<!-- Fuentes -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --azul:#7fb9d6;
   --dorado:#d8a44c;
-  --blanco:#ffffff;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 body{
   margin:0;
   font-family:'Playfair Display', serif;
   background:url('fondo.png') center top / cover no-repeat;
-  color:#333;
 }
 
 .container{
   max-width:420px;
   margin:auto;
-  padding:24px 16px 80px;
+  padding:0 16px 80px;
 }
 
+/* SECCIONES */
 section{
-  margin:48px 0;
+  margin:56px 0;
   text-align:center;
 }
 
-img{
+/* HERO PEGADO ARRIBA */
+.hero{
+  margin-top:0;
+}
+.hero img{
   max-width:100%;
-  height:auto;
+}
+
+/* TAMAÑOS AJUSTADOS */
+.names img{ max-width:360px; }
+.message img{ max-width:360px; }
+
+.date img{ max-width:320px; }
+
+.place img{ max-width:260px; }
+.counter-img{ max-width:200px; }
+
+.gift img{ max-width:360px; }
+
+.button img{ max-width:260px; }
+
+img{
   display:block;
   margin:auto;
 }
 
-/* tamaños controlados */
-.hero img{ max-width:360px; }
-.names img{ max-width:300px; }
-.message img{ max-width:280px; }
-.date img{ max-width:320px; }
-.place img{ max-width:300px; }
-.gift img{ max-width:360px; }
-.button img{ max-width:260px; }
-
-/* botones */
-.button{
-  margin-top:20px;
-}
-
-/* contador */
+/* CONTADOR */
 #countdown{
-  font-size:18px;
-  color:#444;
-  margin-top:12px;
+  margin-top:16px;
+  font-family:'Montserrat', sans-serif;
+  font-size:28px;
+  font-weight:700;
+  color:var(--azul);
 }
 
 /* ANIMACIONES */
 .animate{
   opacity:0;
-  transform:translateY(40px);
-  transition:all 0.9s ease;
+  transform:translateY(60px);
+  transition:all 1s ease;
 }
 
 .animate.show{
@@ -95,23 +99,23 @@ img{
 
   <!-- MENSAJE -->
   <section class="message animate">
-    <img src="mensaje 1.png" alt="Mensaje baby shower">
+    <img src="mensaje 1.png" alt="Mensaje">
   </section>
 
   <!-- FECHA -->
   <section class="date animate">
-    <img src="fecha.png" alt="Fecha del evento">
+    <img src="fecha.png" alt="Fecha">
   </section>
 
   <!-- CONTADOR -->
   <section class="animate">
-    <img src="contador.png" alt="Solo faltan">
+    <img src="contador.png" class="counter-img" alt="Solo faltan">
     <div id="countdown"></div>
   </section>
 
   <!-- LUGAR -->
   <section class="place animate">
-    <img src="lugar.png" alt="Lugar del evento">
+    <img src="lugar.png" alt="Lugar">
     <div class="button">
       <a href="https://www.google.com/maps/place/Conjunto+Residencial+Torres+de+Castello/" target="_blank">
         <img src="boton ubicación.png" alt="Ver ubicación">
@@ -121,48 +125,21 @@ img{
 
   <!-- REGALO -->
   <section class="gift animate">
-    <img src="el regalo.png" alt="El mejor regalo">
+    <img src="el regalo.png" alt="Regalo">
   </section>
 
   <!-- WHATSAPP -->
   <section class="button animate">
     <a href="https://wa.me/573223758532" target="_blank">
-      <img src="boton whatss.png" alt="Confirmar asistencia WhatsApp">
+      <img src="boton whatss.png" alt="WhatsApp">
     </a>
   </section>
 
 </div>
 
 <script>
-/* Animaciones al hacer scroll */
+/* ANIMACIÓN REAL AL SCROLL */
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add('show');
-    }
-  });
-},{ threshold:0.2 });
-
-document.querySelectorAll('.animate').forEach(el=>{
-  observer.observe(el);
-});
-
-/* CONTADOR */
-const targetDate = new Date("March 21, 2026 15:00:00").getTime();
-
-setInterval(()=>{
-  const now = new Date().getTime();
-  const distance = targetDate - now;
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("countdown").innerHTML =
-    `${days} días · ${hours}h · ${minutes}m · ${seconds}s`;
-},1000);
-</script>
-
-</body>
-</html>
