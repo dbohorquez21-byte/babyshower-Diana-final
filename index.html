@@ -1,149 +1,180 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Baby Shower Diana 🍯</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Shower</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Baloo 2', cursive;
-      background: linear-gradient(#fff6d5, #ffe9a8);
-      text-align: center;
-      color: #6b4f1d;
-    }
+<style>
+body{
+  margin:0;
+  font-family:'Baloo 2', cursive;
+  background:linear-gradient(#fff6ec,#ffe4ec);
+  text-align:center;
+  color:#6b4b3e;
+}
 
-    .container {
-      padding: 20px;
-      max-width: 420px;
-      margin: auto;
-    }
+section{
+  padding:50px 20px;
+}
 
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 5px;
-    }
+h1,h2{
+  font-family:'Pacifico', cursive;
+  color:#e89bb0;
+}
 
-    h2 {
-      font-size: 1.2em;
-      margin-top: 0;
-    }
+.text-box{
+  font-size:18px;
+  background:#fff;
+  padding:20px;
+  border-radius:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  margin-bottom:25px;
+}
 
-    .pooh {
-      font-size: 4rem;
-      margin: 10px 0;
-    }
+.pooh{
+  width:80%;
+  max-width:280px;
+  animation:float 3s ease-in-out infinite;
+}
 
-    .card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 15px;
-      margin: 15px 0;
-      box-shadow: 0 8px 20px rgba(0,0,0,.1);
-    }
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+  100%{transform:translateY(0)}
+}
 
-    .countdown {
-      font-size: 1.2em;
-      font-weight: 600;
-    }
+.icon{
+  font-size:50px;
+  margin:10px;
+}
 
-    button, a.btn {
-      display: block;
-      width: 100%;
-      padding: 14px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 14px;
-      font-size: 1em;
-      font-weight: bold;
-      text-decoration: none;
-      color: white;
-      cursor: pointer;
-    }
+.button{
+  display:inline-block;
+  margin-top:15px;
+  padding:15px 30px;
+  background:#ffb6c1;
+  color:#fff;
+  border-radius:40px;
+  text-decoration:none;
+  font-size:18px;
+  box-shadow:0 6px 15px rgba(0,0,0,.15);
+}
 
-    .btn-maps { background: #f4a261; }
-    .btn-wa { background: #25D366; }
-    .btn-music { background: #e9c46a; color:#6b4f1d; }
+.button:hover{
+  transform:scale(1.05);
+}
 
-    footer {
-      font-size: .8em;
-      margin-top: 20px;
-      opacity: .8;
-    }
-  </style>
+.timer{
+  font-size:22px;
+  background:#fff7d6;
+  padding:20px;
+  border-radius:20px;
+  margin-top:15px;
+}
+</style>
 </head>
+
 <body>
 
-<div class="container">
+<!-- INTRO -->
+<section>
+  <div class="text-box">
+    🌸 Un dulce milagro viene en camino 🌸<br>
+    Acompáñanos a celebrar la llegada de nuestra bebé
+  </div>
+  <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" class="pooh">
+</section>
 
-  <div class="pooh">🐻🍯</div>
-
-  <h1>Baby Shower</h1>
-  <h2>En honor a Diana</h2>
-
-  <div class="card">
-    <p>📅 <strong>21 de marzo de 2026</strong></p>
-    <p>⏰ <strong>03:00 PM</strong></p>
+<!-- MÚSICA -->
+<section>
+  <div class="text-box">
+    🎵 Haz clic y escucha la canción que le ponemos en la pancita<br>
+    ¡y que le encanta a nuestra bebé!
   </div>
 
-  <div class="card">
-    <p class="countdown" id="countdown"></p>
+  <audio controls>
+    <source src="TU_CANCION.mp3" type="audio/mpeg">
+  </audio>
+
+  <br><br>
+  <img src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" class="pooh">
+</section>
+
+<!-- FECHA -->
+<section>
+  <div class="text-box">
+    <div class="icon">📅</div>
+    28 de Septiembre<br>
+    ⏰ 5:00 p.m.
   </div>
 
-  <div class="card">
-    <a class="btn btn-maps" target="_blank"
-      href="https://www.google.com/maps/place/Conjunto+Residencial+Torres+de+Castello/@4.639821,-74.1548351,18z/data=!4m6!3m5!1s0x8e3f9c3b1016b46b:0xa87191b8c419f465!8m2!3d4.6402!4d-74.155237!16s%2Fg%2F11c1qckd6d">
-      📍 Ver ubicación
-    </a>
+  <img src="https://media.giphy.com/media/3o6ZtpxSZbQRRnwCKQ/giphy.gif" class="pooh">
+</section>
 
-    <a class="btn btn-wa" target="_blank"
-      href="https://wa.me/573223758532?text=Hola,%20confirmo%20mi%20asistencia%20al%20baby%20shower%20💛">
-      💬 Confirmar asistencia
-    </a>
+<!-- CONTADOR -->
+<section>
+  <div class="text-box">
+    💛 Solo falta 💛
+    <div class="timer" id="countdown"></div>
   </div>
 
-  <div class="card">
-    <button class="btn btn-music" onclick="playMusic()">🎶 Activar música</button>
+  <img src="https://media.giphy.com/media/8Iv5lqKwKsZ2g/giphy.gif" class="pooh">
+</section>
+
+<!-- UBICACIÓN -->
+<section>
+  <div class="text-box">
+    📍 Un lugar lleno de amor y sonrisas<br>
+    Te esperamos para celebrar juntos
   </div>
 
-  <footer>
-    Con amor y dulzura 🍯🐝
-  </footer>
+  <a class="button" href="https://maps.google.com" target="_blank">Ver ubicación</a>
 
-</div>
+  <br><br>
+  <img src="https://media.giphy.com/media/l0ExncehJzexFpRHq/giphy.gif" class="pooh">
+</section>
 
-<audio id="music" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/10/18/audio_6a9b33e1a1.mp3" type="audio/mpeg">
-</audio>
+<!-- REGALO -->
+<section>
+  <div class="text-box">
+    🎁 Tu cariño es nuestro mejor regalo<br>
+    Pero si deseas, puedes ayudarnos con ropita o pañales
+  </div>
+
+  <img src="https://media.giphy.com/media/xUPGcxpCV81ebKh7Vu/giphy.gif" class="pooh">
+</section>
+
+<!-- CONFIRMACIÓN -->
+<section>
+  <div class="text-box">
+    💬 Confírmanos tu asistencia<br>
+    ¡Nos hará muy felices contar contigo!
+  </div>
+
+  <a class="button" href="https://wa.me/573001234567">Confirmar por WhatsApp</a>
+
+  <br><br>
+  <img src="https://media.giphy.com/media/9Y6n9TR7U07ew/giphy.gif" class="pooh">
+</section>
 
 <script>
-  function playMusic() {
-    document.getElementById('music').play();
-  }
+const targetDate = new Date("2026-09-28T17:00:00").getTime();
 
-  const eventDate = new Date("March 21, 2026 15:00:00").getTime();
+setInterval(()=>{
+  const now = new Date().getTime();
+  const diff = targetDate - now;
 
-  const countdown = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
+  const d = Math.floor(diff/(1000*60*60*24));
+  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((diff%(1000*60*60))/(1000*60));
+  const s = Math.floor((diff%(1000*60))/1000);
 
-    if (distance < 0) {
-      document.getElementById("countdown").innerHTML = "🎉 ¡Hoy es el gran día! 🎉";
-      clearInterval(countdown);
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-    document.getElementById("countdown").innerHTML =
-      `⏳ Faltan ${days} días, ${hours} horas y ${minutes} minutos`;
-  }, 1000);
+  document.getElementById("countdown").innerHTML =
+    `${d} días ${h}h ${m}m ${s}s`;
+},1000);
 </script>
 
 </body>
