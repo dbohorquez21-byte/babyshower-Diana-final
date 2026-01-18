@@ -25,12 +25,12 @@ body{
 .container{
   max-width:430px;
   margin:auto;
-  padding:0 16px 100px;
+  padding:0 16px 90px;
 }
 
 /* SECCIONES */
 section{
-  margin:70px 0;
+  margin:60px 0;
   text-align:center;
 }
 
@@ -44,32 +44,34 @@ section{
   object-fit:contain;
 }
 
-/* IMÁGENES GRANDES */
+/* REDUCIR ESPACIOS ENTRE HERO → NOMBRES → MENSAJE */
+.hero + .names{ margin-top:10px; }
+.names + .message{ margin-top:10px; }
+
+/* TAMAÑOS GRANDES */
 .names img{ max-width:420px; }
 .message img{ max-width:420px; }
 .date img{ max-width:380px; }
 .place img{ max-width:320px; }
 .gift img{ max-width:420px; }
-
 .counter-img{ max-width:260px; }
-
 .button img{ max-width:300px; }
 
-/* CONTADOR DESTACADO */
+/* CONTADOR */
 .counter-box{
   background:var(--azul-claro);
-  border-radius:28px;
-  padding:22px 18px;
-  margin-top:20px;
+  border-radius:30px;
+  padding:26px 32px;
+  margin-top:18px;
   box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 #countdown{
-  margin-top:10px;
   font-family:'Montserrat', sans-serif;
   font-size:32px;
   font-weight:700;
   color:var(--azul);
+  white-space:nowrap; /* evita salto de línea */
 }
 
 /* ANIMACIONES ENTRADA */
@@ -84,14 +86,15 @@ section{
   transform:translateY(0);
 }
 
-/* BOUNCE BOTONES */
+/* BOUNCE BOTONES RÁPIDO */
 .bounce{
-  animation:bounce 3s infinite;
+  animation:bounce 0.8s infinite;
 }
 
 @keyframes bounce{
-  0%, 90%, 100%{ transform:translateY(0); }
-  95%{ transform:translateY(-6px); }
+  0%{ transform:translateY(0); }
+  50%{ transform:translateY(-5px); }
+  100%{ transform:translateY(0); }
 }
 </style>
 </head>
