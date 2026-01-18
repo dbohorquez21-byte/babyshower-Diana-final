@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baby Shower Diana 🍯</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Baloo 2', cursive;
+      background: linear-gradient(#fff6d5, #ffe9a8);
+      text-align: center;
+      color: #6b4f1d;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 420px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      margin-top: 0;
+    }
+
+    .pooh {
+      font-size: 4rem;
+      margin: 10px 0;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 15px;
+      margin: 15px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,.1);
+    }
+
+    .countdown {
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+
+    button, a.btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 14px;
+      font-size: 1em;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .btn-maps { background: #f4a261; }
+    .btn-wa { background: #25D366; }
+    .btn-music { background: #e9c46a; color:#6b4f1d; }
+
+    footer {
+      font-size: .8em;
+      margin-top: 20px;
+      opacity: .8;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="pooh">🐻🍯</div>
+
+  <h1>Baby Shower</h1>
+  <h2>En honor a Diana</h2>
+
+  <div class="card">
+    <p>📅 <strong>21 de marzo de 2026</strong></p>
+    <p>⏰ <strong>03:00 PM</strong></p>
+  </div>
+
+  <div class="card">
+    <p class="countdown" id="countdown"></p>
+  </div>
+
+  <div class="card">
+    <a class="btn btn-maps" target="_blank"
+      href="https://www.google.com/maps/place/Conjunto+Residencial+Torres+de+Castello/@4.639821,-74.1548351,18z/data=!4m6!3m5!1s0x8e3f9c3b1016b46b:0xa87191b8c419f465!8m2!3d4.6402!4d-74.155237!16s%2Fg%2F11c1qckd6d">
+      📍 Ver ubicación
+    </a>
+
+    <a class="btn btn-wa" target="_blank"
+      href="https://wa.me/573223758532?text=Hola,%20confirmo%20mi%20asistencia%20al%20baby%20shower%20💛">
+      💬 Confirmar asistencia
+    </a>
+  </div>
+
+  <div class="card">
+    <button class="btn btn-music" onclick="playMusic()">🎶 Activar música</button>
+  </div>
+
+  <footer>
+    Con amor y dulzura 🍯🐝
+  </footer>
+
+</div>
+
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/10/18/audio_6a9b33e1a1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  function playMusic() {
+    document.getElementById('music').play();
+  }
+
+  const eventDate = new Date("March 21, 2026 15:00:00").getTime();
+
+  const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    if (distance < 0) {
+      document.getElementById("countdown").innerHTML = "🎉 ¡Hoy es el gran día! 🎉";
+      clearInterval(countdown);
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    document.getElementById("countdown").innerHTML =
+      `⏳ Faltan ${days} días, ${hours} horas y ${minutes} minutos`;
+  }, 1000);
+</script>
+
+</body>
+</html>
