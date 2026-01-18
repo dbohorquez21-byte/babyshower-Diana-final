@@ -10,61 +10,88 @@
 <style>
 :root{
   --azul:#7fb9d6;
+  --azul-claro:#eaf4fb;
   --dorado:#d8a44c;
 }
 
-*{box-sizing:border-box;}
+*{ box-sizing:border-box; }
 
 body{
   margin:0;
-  background:url('fondo.png') top center / cover no-repeat;
   font-family:'Playfair Display', serif;
+  background:url('fondo.png') top center / cover no-repeat;
 }
 
 .container{
-  max-width:420px;
+  max-width:430px;
   margin:auto;
-  padding:0 16px 80px;
+  padding:0 16px 100px;
 }
 
+/* SECCIONES */
 section{
-  margin:56px 0;
+  margin:70px 0;
   text-align:center;
 }
 
-.hero{ margin-top:0; }
-.hero img{ max-width:100%; display:block; }
-
-.names img,
-.message img,
-.gift img{
-  max-width:360px;
-  display:block;
-  margin:auto;
+/* HERO */
+.hero{
+  margin:0;
+}
+.hero img{
+  width:100%;
+  max-height:95vh;
+  object-fit:contain;
 }
 
-.date img{ max-width:320px; }
-.place img{ max-width:260px; }
-.counter-img{ max-width:200px; }
-.button img{ max-width:260px; }
+/* IMÁGENES GRANDES */
+.names img{ max-width:420px; }
+.message img{ max-width:420px; }
+.date img{ max-width:380px; }
+.place img{ max-width:320px; }
+.gift img{ max-width:420px; }
+
+.counter-img{ max-width:260px; }
+
+.button img{ max-width:300px; }
+
+/* CONTADOR DESTACADO */
+.counter-box{
+  background:var(--azul-claro);
+  border-radius:28px;
+  padding:22px 18px;
+  margin-top:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
 
 #countdown{
-  margin-top:16px;
+  margin-top:10px;
   font-family:'Montserrat', sans-serif;
-  font-size:30px;
+  font-size:32px;
   font-weight:700;
   color:var(--azul);
 }
 
-/* ANIMACIONES */
+/* ANIMACIONES ENTRADA */
 .animate{
   opacity:0;
-  transform:translateY(60px);
-  transition:all 0.9s ease;
+  transform:translateY(70px);
+  transition:all 1s ease;
 }
+
 .animate.show{
   opacity:1;
   transform:translateY(0);
+}
+
+/* BOUNCE BOTONES */
+.bounce{
+  animation:bounce 3s infinite;
+}
+
+@keyframes bounce{
+  0%, 90%, 100%{ transform:translateY(0); }
+  95%{ transform:translateY(-6px); }
 }
 </style>
 </head>
@@ -73,50 +100,60 @@ section{
 
 <div class="container">
 
+  <!-- HERO -->
   <section class="hero animate">
-    <img src="cabezote.png" alt="">
+    <img src="cabezote.png" alt="Cabezote Pooh">
   </section>
 
+  <!-- NOMBRES -->
   <section class="names animate">
-    <img src="Diana%20y%20jhon.png" alt="">
+    <img src="Diana%20y%20jhon.png" alt="Diana y Jhon">
   </section>
 
+  <!-- MENSAJE -->
   <section class="message animate">
-    <img src="mensaje%201.png" alt="">
+    <img src="mensaje%201.png" alt="Mensaje">
   </section>
 
+  <!-- FECHA -->
   <section class="date animate">
-    <img src="fecha.png" alt="">
+    <img src="fecha.png" alt="Fecha">
   </section>
 
+  <!-- CONTADOR -->
   <section class="animate">
-    <img src="contador.png" class="counter-img" alt="">
-    <div id="countdown"></div>
+    <img src="contador.png" class="counter-img" alt="Solo faltan">
+    <div class="counter-box">
+      <div id="countdown"></div>
+    </div>
   </section>
 
+  <!-- LUGAR -->
   <section class="place animate">
-    <img src="lugar.png" alt="">
-    <div class="button">
+    <img src="lugar.png" alt="Lugar">
+    <div class="button bounce">
       <a href="https://www.google.com/maps/place/Conjunto+Residencial+Torres+de+Castello/" target="_blank">
-        <img src="boton%20ubicaci%C3%B3n.png" alt="">
+        <img src="boton%20ubicaci%C3%B3n.png" alt="Ver ubicación">
       </a>
     </div>
   </section>
 
+  <!-- REGALO -->
   <section class="gift animate">
-    <img src="el%20regalo.png" alt="">
+    <img src="el%20regalo.png" alt="Regalo">
   </section>
 
-  <section class="button animate">
+  <!-- WHATSAPP -->
+  <section class="button animate bounce">
     <a href="https://wa.me/573223758532" target="_blank">
-      <img src="boton%20whatss.png" alt="">
+      <img src="boton%20whatss.png" alt="WhatsApp">
     </a>
   </section>
 
 </div>
 
 <script>
-/* ANIMACIONES SCROLL */
+/* SCROLL ANIMATIONS */
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -125,8 +162,8 @@ const observer = new IntersectionObserver(entries=>{
     }
   });
 },{
-  threshold:0.2,
-  rootMargin:'0px 0px -80px 0px'
+  threshold:0.15,
+  rootMargin:'0px 0px -120px 0px'
 });
 
 document.querySelectorAll('.animate').forEach(el=>{
