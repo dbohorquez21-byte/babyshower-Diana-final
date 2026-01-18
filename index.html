@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baby Shower Diana</title>
 
-<!-- Fuentes -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -14,12 +13,12 @@
   --dorado:#d8a44c;
 }
 
-*{ box-sizing:border-box; }
+*{box-sizing:border-box;}
 
 body{
   margin:0;
+  background:url('fondo.png') top center / cover no-repeat;
   font-family:'Playfair Display', serif;
-  background:url('fondo.png') center top / cover no-repeat;
 }
 
 .container{
@@ -28,43 +27,48 @@ body{
   padding:0 16px 80px;
 }
 
-/* SECCIONES */
 section{
   margin:56px 0;
   text-align:center;
 }
 
-/* HERO PEGADO ARRIBA */
 .hero{
   margin-top:0;
 }
 .hero img{
   max-width:100%;
+  display:block;
 }
 
-/* TAMAÑOS AJUSTADOS */
-.names img{ max-width:360px; }
-.message img{ max-width:360px; }
-
-.date img{ max-width:320px; }
-
-.place img{ max-width:260px; }
-.counter-img{ max-width:200px; }
-
-.gift img{ max-width:360px; }
-
-.button img{ max-width:260px; }
-
-img{
+.names img,
+.message img,
+.gift img{
+  max-width:360px;
   display:block;
   margin:auto;
 }
 
-/* CONTADOR */
+.date img{
+  max-width:320px;
+  margin:auto;
+}
+
+.place img{
+  max-width:260px;
+}
+
+.counter-img{
+  max-width:200px;
+}
+
+.button img{
+  max-width:260px;
+}
+
 #countdown{
   margin-top:16px;
   font-family:'Montserrat', sans-serif;
-  font-size:28px;
+  font-size:30px;
   font-weight:700;
   color:var(--azul);
 }
@@ -73,7 +77,7 @@ img{
 .animate{
   opacity:0;
   transform:translateY(60px);
-  transition:all 1s ease;
+  transition:all 0.9s ease;
 }
 
 .animate.show{
@@ -87,59 +91,82 @@ img{
 
 <div class="container">
 
-  <!-- HERO -->
   <section class="hero animate">
-    <img src="cabezote.png" alt="Baby Shower Pooh">
+    <img src="cabezote.png" alt="">
   </section>
 
-  <!-- NOMBRES -->
   <section class="names animate">
-    <img src="Diana y jhon.png" alt="Diana y Jhon">
+    <img src="nombres.png" alt="">
   </section>
 
-  <!-- MENSAJE -->
   <section class="message animate">
-    <img src="mensaje 1.png" alt="Mensaje">
+    <img src="mensaje.png" alt="">
   </section>
 
-  <!-- FECHA -->
   <section class="date animate">
-    <img src="fecha.png" alt="Fecha">
+    <img src="fecha.png" alt="">
   </section>
 
-  <!-- CONTADOR -->
   <section class="animate">
-    <img src="contador.png" class="counter-img" alt="Solo faltan">
+    <img src="contador.png" class="counter-img" alt="">
     <div id="countdown"></div>
   </section>
 
-  <!-- LUGAR -->
   <section class="place animate">
-    <img src="lugar.png" alt="Lugar">
+    <img src="lugar.png" alt="">
     <div class="button">
       <a href="https://www.google.com/maps/place/Conjunto+Residencial+Torres+de+Castello/" target="_blank">
-        <img src="boton ubicación.png" alt="Ver ubicación">
+        <img src="boton-ubicacion.png" alt="">
       </a>
     </div>
   </section>
 
-  <!-- REGALO -->
   <section class="gift animate">
-    <img src="el regalo.png" alt="Regalo">
+    <img src="regalo.png" alt="">
   </section>
 
-  <!-- WHATSAPP -->
   <section class="button animate">
     <a href="https://wa.me/573223758532" target="_blank">
-      <img src="boton whatss.png" alt="WhatsApp">
+      <img src="boton-whatsapp.png" alt="">
     </a>
   </section>
 
 </div>
 
 <script>
-/* ANIMACIÓN REAL AL SCROLL */
+/* ANIMACIONES SCROLL */
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+},{
+  threshold:0.2,
+  rootMargin:'0px 0px -80px 0px'
+});
+
+document.querySelectorAll('.animate').forEach(el=>{
+  observer.observe(el);
+});
+
+/* CONTADOR */
+const targetDate = new Date("March 21, 2026 15:00:00").getTime();
+
+setInterval(()=>{
+  const now = Date.now();
+  const diff = targetDate - now;
+
+  const d = Math.floor(diff / (1000*60*60*24));
+  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((diff%(1000*60*60))/(1000*60));
+  const s = Math.floor((diff%(1000*60))/1000);
+
+  document.getElementById("countdown").innerHTML =
+    `${d} días · ${h}h · ${m}m · ${s}s`;
+},1000);
+</script>
+
+</body>
+</html>
