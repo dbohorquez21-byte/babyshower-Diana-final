@@ -1,247 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Baby Shower Diana</title>
 
-<!-- Tipografías -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Allura&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --azul:#7fb9d6;
+  --dorado:#d8a44c;
+  --blanco:#ffffff;
+}
+
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
-  background:#f8f5ef;
-  font-family:'Montserrat', sans-serif;
-  color:#8a7a62;
+  font-family:'Playfair Display', serif;
+  background:url('fondo.png') center top / cover no-repeat;
+  color:#333;
 }
 
-.flyer{
-  max-width:430px;
+.container{
+  max-width:420px;
   margin:auto;
-  padding:30px 25px 50px;
+  padding:24px 16px 80px;
+}
+
+section{
+  margin:48px 0;
   text-align:center;
-  background:#f9f6f1;
-  position:relative;
 }
 
-/* HERO */
-.hero{
-  position:relative;
-  margin-bottom:10px;
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:auto;
 }
 
-.hero img{
-  width:75%;
-  max-width:300px;
-}
+/* tamaños controlados */
+.hero img{ max-width:360px; }
+.names img{ max-width:300px; }
+.message img{ max-width:280px; }
+.date img{ max-width:320px; }
+.place img{ max-width:300px; }
+.gift img{ max-width:360px; }
+.button img{ max-width:260px; }
 
-.hero .baby{
-  position:absolute;
-  top:38%;
-  left:50%;
-  transform:translateX(-50%);
-  font-family:'Playfair Display', serif;
-  font-size:70px;
-  letter-spacing:8px;
-  color:#cfe3ee;
-  z-index:-1;
-}
-
-/* Decorativos */
-.decor{
-  width:120px;
-  margin:20px auto;
-}
-
-/* Titulos */
-.script{
-  font-family:'Allura', cursive;
-  color:#c9a24d;
-}
-
-.title{ font-size:34px; }
-.name{ font-size:42px; }
-
-/* Texto */
-.text{
-  font-size:14.5px;
-  line-height:1.6;
-  margin:18px 0;
-}
-
-/* Lineas */
-.line{
-  width:70%;
-  height:1px;
-  background:#d8cfc2;
-  margin:22px auto;
-}
-
-/* Fecha */
-.date{
-  margin:18px 0;
-}
-
-.date .month{
-  font-size:16px;
-  letter-spacing:2px;
-}
-
-.date-row{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  margin:6px 0;
-}
-
-.date-row .day,
-.date-row .time{
-  border-bottom:1px solid #c9a24d;
-  padding-bottom:2px;
-}
-
-.date-row .number{
-  font-family:'Playfair Display', serif;
-  font-size:42px;
-  color:#a8c7d8;
-}
-
-.year{
-  font-size:14px;
-  letter-spacing:2px;
-}
-
-/* Botones */
-.buttons{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  margin:20px 0;
-}
-
+/* botones */
 .button{
-  padding:10px 20px;
-  border-radius:25px;
-  border:1px solid #a8c7d8;
-  background:#cfe3ee;
-  color:#6f5f4a;
-  text-decoration:none;
-  font-size:13px;
+  margin-top:20px;
 }
 
-/* Footer */
-.footer{
-  margin-top:25px;
-  font-family:'Allura', cursive;
-  font-size:30px;
-  color:#c9a24d;
+/* contador */
+#countdown{
+  font-size:18px;
+  color:#444;
+  margin-top:12px;
 }
 
-/* Responsive */
-@media(max-width:480px){
-  .hero img{ width:85%; }
-  .hero .baby{ font-size:60px; }
+/* ANIMACIONES */
+.animate{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.9s ease;
+}
+
+.animate.show{
+  opacity:1;
+  transform:translateY(0);
 }
 </style>
 </head>
 
 <body>
 
-<div class="flyer">
+<div class="container">
 
-  <!-- HERO (Imagen 1) -->
-  <div class="hero">
-    <div class="baby">BABY</div>
-    <img src="0b4a2803-f05e-4c59-a142-b9432f145c51.png" alt="Pooh con globos">
-  </div>
+  <!-- HERO -->
+  <section class="hero animate">
+    <img src="cabezote.png" alt="Baby Shower Pooh">
+  </section>
 
-  <div class="script title">Baby Shower</div>
-  <div class="script name">Diana</div>
+  <!-- NOMBRES -->
+  <section class="names animate">
+    <img src="Diana y jhon.png" alt="Diana y Jhon">
+  </section>
 
-  <!-- Decorativo 2 -->
-  <img class="decor" src="c8f24681-a0de-4025-8f5b-a1b7dc30a2de.png" alt="Decoración globo">
+  <!-- MENSAJE -->
+  <section class="message animate">
+    <img src="mensaje 1.png" alt="Mensaje baby shower">
+  </section>
 
-  <div class="text">
-    Nuestro amor se multiplica y en nuestra familia<br>
-    habrá una sonrisa más iluminando nuestras vidas.
-  </div>
+  <!-- FECHA -->
+  <section class="date animate">
+    <img src="fecha.png" alt="Fecha del evento">
+  </section>
 
-  <!-- Imagen 3 -->
-  <img class="decor" src="48f7b33e-db36-4456-8fe7-93dcc49e1da0.png" alt="Pooh tierno">
+  <!-- CONTADOR -->
+  <section class="animate">
+    <img src="contador.png" alt="Solo faltan">
+    <div id="countdown"></div>
+  </section>
 
-  <div class="line"></div>
-
-  <!-- Fecha -->
-  <div class="date">
-    <div class="month">MARZO</div>
-    <div class="date-row">
-      <div class="day">SÁBADO</div>
-      <div class="number">21</div>
-      <div class="time">3:00 P.M.</div>
+  <!-- LUGAR -->
+  <section class="place animate">
+    <img src="lugar.png" alt="Lugar del evento">
+    <div class="button">
+      <a href="https://www.google.com/maps/place/Conjunto+Residencial+Torres+de+Castello/" target="_blank">
+        <img src="boton ubicación.png" alt="Ver ubicación">
+      </a>
     </div>
-    <div class="year">2026</div>
-  </div>
+  </section>
 
-  <!-- Imagen 4 -->
-  <img class="decor" src="b93bcb84-9844-40db-8e49-f6255aa34174.png" alt="Pooh feliz">
+  <!-- REGALO -->
+  <section class="gift animate">
+    <img src="el regalo.png" alt="El mejor regalo">
+  </section>
 
-  <!-- Contador -->
-  <div class="text">
-    Solo falta… <span id="countdown"></span>
-  </div>
-
-  <div class="line"></div>
-
-  <!-- Ubicación -->
-  <div class="text">
-    Salón Conjunto Residencial<br>
-    Torres de Castello
-  </div>
-
-  <div class="buttons">
-    <a class="button" target="_blank"
-       href="https://www.google.com/maps/place/Conjunto+Residencial+Torres+de+Castello">
-       Ver ubicación
+  <!-- WHATSAPP -->
+  <section class="button animate">
+    <a href="https://wa.me/573223758532" target="_blank">
+      <img src="boton whatss.png" alt="Confirmar asistencia WhatsApp">
     </a>
-  </div>
-
-  <!-- Imagen 5 -->
-  <img class="decor" src="abf7d5f8-badb-43af-abca-3549a7f7f24b.png" alt="Pooh con miel">
-
-  <div class="line"></div>
-
-  <!-- Regalo -->
-  <div class="text">
-    Si deseas obsequiarnos algo,<br>
-    cualquier detalle será recibido con mucho amor.
-  </div>
-
-  <!-- Imagen 6 -->
-  <img class="decor" src="9d15c4b6-5aa6-4b2b-aafa-bf1e3caaff10.png" alt="Pooh y amigos">
-
-  <!-- Confirmación -->
-  <div class="buttons">
-    <a class="button" target="_blank"
-       href="https://wa.me/573223758532?text=Confirmo%20mi%20asistencia%20al%20baby%20shower">
-       Confirmar asistencia
-    </a>
-  </div>
-
-  <div class="footer">Te esperamos</div>
+  </section>
 
 </div>
 
 <script>
-const eventDate = new Date("March 21, 2026 15:00:00").getTime();
+/* Animaciones al hacer scroll */
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{ threshold:0.2 });
+
+document.querySelectorAll('.animate').forEach(el=>{
+  observer.observe(el);
+});
+
+/* CONTADOR */
+const targetDate = new Date("March 21, 2026 15:00:00").getTime();
+
 setInterval(()=>{
   const now = new Date().getTime();
-  const diff = eventDate - now;
-  if(diff < 0){
-    document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
-    return;
-  }
-  const d = Math.floor(diff/(1000*60*60*24));
-  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-  const m = Math
+  const distance = targetDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    `${days} días · ${hours}h · ${minutes}m · ${seconds}s`;
+},1000);
+</script>
+
+</body>
+</html>
