@@ -60,8 +60,8 @@ section{
 .message img{ max-width:420px; }
 .date img{ max-width:380px; }
 .place img{ max-width:220px; }
-.gift img{ max-width:420px; }
 .counter-img{ max-width:120px; }
+.gift img{ max-width:420px; }
 .button img{ max-width:300px; }
 .final-text img{ max-width:360px; }
 
@@ -129,21 +129,27 @@ section{
     <img src="fecha.png" alt="Fecha">
   </section>
 
-  <!-- CONTADOR -->
-  <section class="animate">
-    <img src="contador.png" class="counter-img" alt="Solo faltan">
-    <div class="counter-box">
-      <div id="countdown"></div>
-    </div>
-  </section>
-
-  <!-- LUGAR + BOTÓN UBICACIÓN -->
+  <!-- LUGAR -->
   <section class="place animate">
     <img src="lugar.png" alt="Lugar">
-    <div class="button bounce">
-      <a href="https://www.google.com/maps/place/Conjunto+Residencial+Torres+de+Castello/" target="_blank">
-        <img src="boton%20ubicaci%C3%B3n.png" alt="Ver ubicación">
-      </a>
+  </section>
+
+  <!-- BOTÓN UBICACIÓN -->
+  <section class="button animate bounce">
+    <a href="https://www.google.com/maps/place/Conjunto+Residencial+Torres+de+Castello/" target="_blank">
+      <img src="boton%20ubicaci%C3%B3n.png" alt="Ver ubicación">
+    </a>
+  </section>
+
+  <!-- SOLO FALTAN -->
+  <section class="animate">
+    <img src="contador.png" class="counter-img" alt="Solo faltan">
+  </section>
+
+  <!-- CRONÓMETRO -->
+  <section class="animate">
+    <div class="counter-box">
+      <div id="countdown"></div>
     </div>
   </section>
 
