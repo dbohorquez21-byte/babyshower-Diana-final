@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baby Shower Diana</title>
 
+<!-- Fuentes -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -25,12 +26,12 @@ body{
 .container{
   max-width:430px;
   margin:auto;
-  padding:0 16px 90px;
+  padding:0 16px 100px;
 }
 
 /* SECCIONES */
 section{
-  margin:50px 0;
+  margin:60px 0;
   text-align:center;
 }
 
@@ -50,7 +51,7 @@ section{
   padding-left:24px;
 }
 .names img{
-  max-width:400px; /* TU CAMBIO */
+  max-width:500px;
   margin-left:0;
 }
 
@@ -58,7 +59,7 @@ section{
 .hero + .names{ margin-top:10px; }
 .names + .message{ margin-top:10px; }
 
-/* TAMAÑOS GRANDES (TUS VALORES) */
+/* TAMAÑOS GRANDES */
 .message img{ max-width:420px; }
 .date img{ max-width:380px; }
 .place img{ max-width:220px; }
@@ -67,7 +68,7 @@ section{
 .button img{ max-width:300px; }
 .final-text img{ max-width:360px; }
 
-/* CONTADOR (TU DISEÑO) */
+/* CONTADOR */
 .counter-box{
   background:var(--azul-claro);
   border-radius:30px;
@@ -82,6 +83,21 @@ section{
   font-weight:700;
   color:var(--azul);
   white-space:nowrap;
+}
+
+/* BOTÓN MÚSICA */
+.music-control{
+  background:#e6b04c;
+  color:#fff;
+  padding:16px 30px;
+  border-radius:50px;
+  font-size:16px;
+  font-family:'Montserrat', sans-serif;
+  margin:20px auto 0;
+  display:inline-block;
+  cursor:pointer;
+  animation:bounceMusic 0.7s infinite alternate;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
 /* ANIMACIONES ENTRADA */
@@ -104,6 +120,11 @@ section{
   50%{ transform:translateY(-5px); }
   100%{ transform:translateY(0); }
 }
+
+@keyframes bounceMusic{
+  from{ transform:translateY(0); }
+  to{ transform:translateY(-5px); }
+}
 </style>
 </head>
 
@@ -114,6 +135,13 @@ section{
   <!-- HERO -->
   <section class="hero animate">
     <img src="cabezote.png" alt="Cabezote Pooh">
+  </section>
+
+  <!-- BOTÓN MÚSICA -->
+  <section class="animate">
+    <div class="music-control" onclick="toggleMusic()">
+      🎵 Escuchar la canción
+    </div>
   </section>
 
   <!-- NOMBRES -->
@@ -168,7 +196,26 @@ section{
 
 </div>
 
+<!-- AUDIO -->
+<audio id="musica" loop>
+  <source src="magnifique-journee-338554.mp3" type="audio/mpeg">
+</audio>
+
 <script>
+/* MÚSICA */
+const musica = document.getElementById('musica');
+let reproduciendo = false;
+
+function toggleMusic(){
+  if(!reproduciendo){
+    musica.play();
+    reproduciendo = true;
+  }else{
+    musica.pause();
+    reproduciendo = false;
+  }
+}
+
 /* SCROLL ANIMATIONS */
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
