@@ -44,16 +44,16 @@ section{
   object-fit:contain;
 }
 
-/* NOMBRES – CENTRADO LIMPIO */
+/* NOMBRES */
 .names{
   text-align:center;
 }
 .names img{
-  max-width:500px;
+  max-width:400px;
   margin:0 auto;
 }
 
-/* REDUCIR ESPACIOS ENTRE HERO → NOMBRES → MENSAJE */
+/* ESPACIOS HERO */
 .hero + .names{ margin-top:10px; }
 .names + .message{ margin-top:10px; }
 
@@ -96,15 +96,12 @@ section{
   cursor:pointer;
   animation:bounceMusic 0.7s infinite alternate;
   box-shadow:0 8px 20px rgba(0,0,0,.15);
-
-  /* ❌ NO SELECCIONABLE */
   user-select:none;
   -webkit-user-select:none;
-  -ms-user-select:none;
   -webkit-tap-highlight-color:transparent;
 }
 
-/* ANIMACIONES ENTRADA */
+/* ANIMACIONES */
 .animate{
   opacity:0;
   transform:translateY(70px);
@@ -115,7 +112,7 @@ section{
   transform:translateY(0);
 }
 
-/* BOUNCE BOTONES */
+/* BOUNCE */
 .bounce{
   animation:bounce 0.8s infinite;
 }
@@ -141,7 +138,7 @@ section{
     <img src="cabezote.png" alt="Cabezote Pooh">
   </section>
 
-  <!-- BOTÓN MÚSICA -->
+  <!-- MUSICA -->
   <section class="animate">
     <div class="music-control" onclick="toggleMusic()">
       🎵 Escuchar la canción
@@ -175,7 +172,7 @@ section{
   <section class="place animate">
     <img src="lugar.png" alt="Lugar">
     <div class="button bounce">
-      <a href="https://www.google.com/maps/place/Conjunto+Residencial+Torres+de+Castello/" target="_blank">
+      <a href="https://wa.me/573223758532" target="_blank">
         <img src="boton%20ubicaci%C3%B3n.png" alt="Ver ubicación">
       </a>
     </div>
@@ -186,10 +183,10 @@ section{
     <img src="el%20regalo.png" alt="Regalo">
   </section>
 
-  <!-- WHATSAPP -->
+  <!-- WHATSAPP CON MENSAJE -->
   <section class="button animate bounce">
-    <a href="https://wa.me/573223758532" target="_blank">
-      <img src="boton%20whatss.png" alt="WhatsApp">
+    <a href="https://wa.me/573223758532?text=Hola%20Diana%20y%20Jhon%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
+      <img src="boton%20whatss.png" alt="Confirmar asistencia">
     </a>
   </section>
 
@@ -220,7 +217,7 @@ function toggleMusic(){
   }
 }
 
-/* SCROLL ANIMATIONS */
+/* SCROLL */
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
