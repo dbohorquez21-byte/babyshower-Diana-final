@@ -11,7 +11,6 @@
 :root{
   --azul:#7fb9d6;
   --azul-claro:#eaf4fb;
-  --dorado:#d8a44c;
 }
 
 *{ box-sizing:border-box; }
@@ -53,7 +52,7 @@ section{
   margin:0 auto;
 }
 
-/* ESPACIOS HERO */
+/* ESPACIOS */
 .hero + .names{ margin-top:10px; }
 .names + .message{ margin-top:10px; }
 
@@ -83,24 +82,6 @@ section{
   white-space:nowrap;
 }
 
-/* BOTÓN MÚSICA */
-.music-control{
-  background:#e6b04c;
-  color:#fff;
-  padding:16px 30px;
-  border-radius:50px;
-  font-size:16px;
-  font-family:'Montserrat', sans-serif;
-  margin:20px auto 0;
-  display:inline-block;
-  cursor:pointer;
-  animation:bounceMusic 0.7s infinite alternate;
-  box-shadow:0 8px 20px rgba(0,0,0,.15);
-  user-select:none;
-  -webkit-user-select:none;
-  -webkit-tap-highlight-color:transparent;
-}
-
 /* ANIMACIONES */
 .animate{
   opacity:0;
@@ -112,7 +93,7 @@ section{
   transform:translateY(0);
 }
 
-/* BOUNCE */
+/* BOUNCE BOTONES */
 .bounce{
   animation:bounce 0.8s infinite;
 }
@@ -120,11 +101,6 @@ section{
   0%{ transform:translateY(0); }
   50%{ transform:translateY(-5px); }
   100%{ transform:translateY(0); }
-}
-
-@keyframes bounceMusic{
-  from{ transform:translateY(0); }
-  to{ transform:translateY(-5px); }
 }
 </style>
 </head>
@@ -136,13 +112,6 @@ section{
   <!-- HERO -->
   <section class="hero animate">
     <img src="cabezote.png" alt="Cabezote Pooh">
-  </section>
-
-  <!-- MUSICA -->
-  <section class="animate">
-    <div class="music-control" onclick="toggleMusic()">
-      🎵 Escuchar la canción
-    </div>
   </section>
 
   <!-- NOMBRES -->
@@ -172,8 +141,8 @@ section{
   <section class="place animate">
     <img src="lugar.png" alt="Lugar">
     <div class="button bounce">
-      <a href="https://wa.me/573223758532" target="_blank">
-        <img src="boton%20ubicaci%C3%B3n.png" alt="Ver ubicación">
+      <a href="https://wa.me/573223758532?text=Hola%20Diana%20y%20Jhon%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
+        <img src="boton%20whatss.png" alt="Confirmar asistencia">
       </a>
     </div>
   </section>
@@ -183,13 +152,6 @@ section{
     <img src="el%20regalo.png" alt="Regalo">
   </section>
 
-  <!-- WHATSAPP CON MENSAJE -->
-  <section class="button animate bounce">
-    <a href="https://wa.me/573223758532?text=Hola%20Diana%20y%20Jhon%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
-      <img src="boton%20whatss.png" alt="Confirmar asistencia">
-    </a>
-  </section>
-
   <!-- TE ESPERAMOS -->
   <section class="final-text animate">
     <img src="te%20esperamos.png" alt="Te esperamos">
@@ -197,27 +159,8 @@ section{
 
 </div>
 
-<!-- AUDIO -->
-<audio id="musica" loop>
-  <source src="magnifique-journee-338554.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-/* MÚSICA */
-const musica = document.getElementById('musica');
-let reproduciendo = false;
-
-function toggleMusic(){
-  if(!reproduciendo){
-    musica.play();
-    reproduciendo = true;
-  }else{
-    musica.pause();
-    reproduciendo = false;
-  }
-}
-
-/* SCROLL */
+/* SCROLL ANIMATIONS */
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
