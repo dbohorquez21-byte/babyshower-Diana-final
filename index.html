@@ -44,20 +44,20 @@ section{
   object-fit:contain;
 }
 
-/* AJUSTE ESPECÍFICO PARA NOMBRES */
+/* NOMBRES – CENTRADO LIMPIO */
 .names{
-  text-align:left;
+  text-align:center;
 }
 .names img{
   max-width:500px;
-  margin-left:0;
+  margin:0 auto;
 }
 
 /* REDUCIR ESPACIOS ENTRE HERO → NOMBRES → MENSAJE */
 .hero + .names{ margin-top:10px; }
 .names + .message{ margin-top:10px; }
 
-/* TAMAÑOS GRANDES */
+/* TAMAÑOS */
 .message img{ max-width:420px; }
 .date img{ max-width:380px; }
 .place img{ max-width:220px; }
@@ -96,6 +96,12 @@ section{
   cursor:pointer;
   animation:bounceMusic 0.7s infinite alternate;
   box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+  /* ❌ NO SELECCIONABLE */
+  user-select:none;
+  -webkit-user-select:none;
+  -ms-user-select:none;
+  -webkit-tap-highlight-color:transparent;
 }
 
 /* ANIMACIONES ENTRADA */
@@ -142,7 +148,7 @@ section{
     </div>
   </section>
 
-  <!-- NOMBRES (IMAGEN NUEVA) -->
+  <!-- NOMBRES -->
   <section class="names animate">
     <img src="diana-final.png" alt="Diana y Jhon">
   </section>
