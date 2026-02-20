@@ -73,7 +73,7 @@ section{
   width:100%;
 }
 
-/* CONTADOR */
+/* 🔥 CONTADOR CORREGIDO */
 .counter-box{
   background:var(--azul-claro);
   border-radius:40px;
@@ -89,14 +89,21 @@ section{
 
 #countdown{
   font-family:'Montserrat', sans-serif;
-  font-size:26px;
+  font-size:23px; /* 3px más pequeño */
   font-weight:700;
   color:var(--azul);
   text-align:center;
   letter-spacing:1px;
+  white-space:nowrap;
 }
 
-/* BOTONES WHATSAPP LADO A LADO */
+/* BOTÓN UBICACIÓN */
+.location-btn img{
+  max-width:300px;
+  width:100%;
+}
+
+/* 🔥 BOTONES WHATSAPP MÁS GRANDES */
 .whatsapp-row{
   display:flex;
   justify-content:center;
@@ -110,10 +117,21 @@ section{
 
 .whatsapp-row img{
   width:100%;
-  max-width:190px;
+  max-width:210px; /* MÁS GRANDES */
 }
 
-/* ANIMACIONES */
+/* ✨ ANIMACIÓN SUAVE */
+.bounce{
+  animation:bounce 1s infinite;
+}
+
+@keyframes bounce{
+  0%{ transform:translateY(0); }
+  50%{ transform:translateY(-6px); }
+  100%{ transform:translateY(0); }
+}
+
+/* ANIMACIÓN SCROLL */
 .animate{
   opacity:0;
   transform:translateY(60px);
@@ -126,7 +144,7 @@ section{
 
 @media(max-width:430px){
   .whatsapp-row img{
-    max-width:160px;
+    max-width:180px;
   }
 }
 </style>
@@ -148,13 +166,19 @@ section{
     <img src="pooh.png" alt="Mensaje">
   </section>
 
-  <!-- NUEVA FECHA -->
   <section class="date animate">
     <img src="fecha-11-br.png" alt="Fecha">
   </section>
 
   <section class="place animate">
     <img src="barrio tintal.png" alt="Lugar">
+  </section>
+
+  <!-- 🔥 BOTÓN UBICACIÓN RESTAURADO -->
+  <section class="location-btn animate bounce">
+    <a href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
+      <img src="boton%20ubicaci%C3%B3n.png" alt="Ver ubicación">
+    </a>
   </section>
 
   <section class="animate">
@@ -171,17 +195,15 @@ section{
     <img src="el mejor.png" alt="Regalo">
   </section>
 
-  <!-- 🔥 DOS BOTONES WHATSAPP -->
+  <!-- 🔥 DOS BOTONES GRANDES CON ANIMACIÓN -->
   <section class="animate">
     <div class="whatsapp-row">
       
-      <!-- JHON -->
-      <a href="https://wa.me/573134347870?text=Hola%20Jhon%20y%20Diana%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
+      <a class="bounce" href="https://wa.me/573134347870?text=Hola%20Jhon%20y%20Diana%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
         <img src="boton jhon.png" alt="Confirmar con Jhon">
       </a>
 
-      <!-- DIANA -->
-      <a href="https://wa.me/573118221867?text=Hola%20Diana%20y%20Jhon%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
+      <a class="bounce" href="https://wa.me/573118221867?text=Hola%20Diana%20y%20Jhon%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
         <img src="boton diana.png" alt="Confirmar con Diana">
       </a>
 
