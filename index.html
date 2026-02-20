@@ -17,14 +17,15 @@
 
 body{
   margin:0;
+  min-height:100vh;
   font-family:'Playfair Display', serif;
-  background:url('fondo rosa.png') top center / cover no-repeat;
+  background:url('fondo rosa.png') center top / cover no-repeat fixed;
 }
 
 .container{
   max-width:430px;
   margin:auto;
-  padding:0 16px 100px;
+  padding:0 16px 140px;
 }
 
 /* SECCIONES */
@@ -44,9 +45,6 @@ section{
 }
 
 /* NOMBRES */
-.names{
-  text-align:center;
-}
 .names img{
   max-width:400px;
   margin:0 auto;
@@ -102,6 +100,13 @@ section{
   50%{ transform:translateY(-5px); }
   100%{ transform:translateY(0); }
 }
+
+/* MEJORA MOBILE */
+@media(max-width:480px){
+  section{
+    margin:30px 0;
+  }
+}
 </style>
 </head>
 
@@ -121,12 +126,12 @@ section{
 
   <!-- MENSAJE -->
   <section class="message animate">
-    <img src="mensaje%201.png" alt="Mensaje">
+    <img src="pooh.png" alt="Mensaje">
   </section>
 
   <!-- FECHA -->
   <section class="date animate">
-    <img src="fecha.png" alt="Fecha">
+    <img src="fecha-negro.png" alt="Fecha">
   </section>
 
   <!-- LUGAR -->
@@ -134,7 +139,7 @@ section{
     <img src="barrio tintal.png" alt="Lugar">
   </section>
 
-  <!-- BOTÓN UBICACIÓN (ACTUALIZADO) -->
+  <!-- BOTÓN UBICACIÓN -->
   <section class="button animate bounce">
     <a href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
       <img src="boton%20ubicaci%C3%B3n.png" alt="Ver ubicación">
@@ -155,12 +160,12 @@ section{
 
   <!-- REGALO -->
   <section class="gift animate">
-    <img src="el mejor regalo.png" alt="Regalo">
+    <img src="el mejor.png" alt="Regalo">
   </section>
 
   <!-- WHATSAPP -->
   <section class="button animate bounce">
-    <a href="https://wa.me/573223758532?text=Hola%20Diana%20y%20Jhon%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
+    <a href="https://wa.me/573223758532?text=Hola%20Jhon%20y%20Diana%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
       <img src="boton%20whatss.png" alt="Confirmar asistencia">
     </a>
   </section>
@@ -189,7 +194,7 @@ document.querySelectorAll('.animate').forEach(el=>{
   observer.observe(el);
 });
 
-const targetDate = new Date("March 21, 2026 15:00:00").getTime();
+const targetDate = new Date("March 21, 2026 19:00:00").getTime();
 
 setInterval(()=>{
   const now = Date.now();
