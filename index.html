@@ -18,7 +18,7 @@
 body{
   margin:0;
   font-family:'Playfair Display', serif;
-  background:url('fondo.png') top center / cover no-repeat;
+  background:url('fondo rosa.png') top center / cover no-repeat;
 }
 
 .container{
@@ -116,7 +116,7 @@ section{
 
   <!-- NOMBRES -->
   <section class="names animate">
-    <img src="diana-final.png" alt="Diana y Jhon">
+    <img src="jhon y diana.png" alt="Jhon y Diana">
   </section>
 
   <!-- MENSAJE -->
@@ -131,12 +131,12 @@ section{
 
   <!-- LUGAR -->
   <section class="place animate">
-    <img src="lugar.png" alt="Lugar">
+    <img src="barrio tintal.png" alt="Lugar">
   </section>
 
-  <!-- BOTÓN UBICACIÓN -->
+  <!-- BOTÓN UBICACIÓN (ACTUALIZADO) -->
   <section class="button animate bounce">
-    <a href="https://www.google.com/maps/place/Conjunto+Residencial+Torres+de+Castello/" target="_blank">
+    <a href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
       <img src="boton%20ubicaci%C3%B3n.png" alt="Ver ubicación">
     </a>
   </section>
@@ -155,10 +155,10 @@ section{
 
   <!-- REGALO -->
   <section class="gift animate">
-    <img src="el%20regalo.png" alt="Regalo">
+    <img src="el mejor regalo.png" alt="Regalo">
   </section>
 
-  <!-- WHATSAPP (PENÚLTIMO) -->
+  <!-- WHATSAPP -->
   <section class="button animate bounce">
     <a href="https://wa.me/573223758532?text=Hola%20Diana%20y%20Jhon%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
       <img src="boton%20whatss.png" alt="Confirmar asistencia">
@@ -173,7 +173,6 @@ section{
 </div>
 
 <script>
-/* SCROLL ANIMATIONS */
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -190,7 +189,6 @@ document.querySelectorAll('.animate').forEach(el=>{
   observer.observe(el);
 });
 
-/* CONTADOR */
 const targetDate = new Date("March 21, 2026 15:00:00").getTime();
 
 setInterval(()=>{
