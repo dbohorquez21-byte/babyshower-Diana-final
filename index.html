@@ -13,25 +13,35 @@
   --azul-claro:#eaf4fb;
 }
 
-*{ box-sizing:border-box; }
-
-body{
-  margin:0;
-  min-height:100vh;
-  font-family:'Playfair Display', serif;
-  background:url('fondo rosa.png') center top / cover no-repeat fixed;
+*{
+  box-sizing:border-box;
 }
 
+html, body{
+  margin:0;
+  padding:0;
+  width:100%;
+  overflow-x:hidden;
+}
+
+body{
+  font-family:'Playfair Display', serif;
+  background:url('fondo rosa.png') center top no-repeat;
+  background-size:cover;
+}
+
+/* CONTENEDOR CENTRADO REAL */
 .container{
+  width:100%;
   max-width:430px;
-  margin:auto;
-  padding:0 16px 140px;
+  margin:0 auto;
+  padding:0 20px 140px;
+  text-align:center;
 }
 
 /* SECCIONES */
 section{
   margin:40px 0;
-  text-align:center;
 }
 
 /* HERO */
@@ -47,26 +57,39 @@ section{
 /* NOMBRES */
 .names img{
   max-width:400px;
-  margin:0 auto;
+  width:100%;
+  height:auto;
 }
-
-/* ESPACIOS */
-.hero + .names{ margin-top:10px; }
-.names + .message{ margin-top:10px; }
 
 /* TAMAÑOS */
-.message img{ max-width:420px; }
-.date img{ max-width:380px; }
+.message img{ max-width:420px; width:100%; }
+.date img{ max-width:380px; width:100%; }
 
-/* 🔥 LUGAR MÁS GRANDE */
+/* LUGAR MÁS GRANDE */
 .place img{ 
   max-width:360px; 
+  width:100%;
 }
 
-.counter-img{ max-width:120px; }
-.gift img{ max-width:420px; }
-.button img{ max-width:300px; }
-.final-text img{ max-width:420px; }
+.counter-img{ 
+  max-width:120px; 
+  width:100%;
+}
+
+.gift img{ 
+  max-width:420px; 
+  width:100%;
+}
+
+.button img{ 
+  max-width:300px; 
+  width:100%;
+}
+
+.final-text img{ 
+  max-width:420px; 
+  width:100%;
+}
 
 /* CONTADOR */
 .counter-box{
@@ -88,8 +111,8 @@ section{
 /* ANIMACIONES */
 .animate{
   opacity:0;
-  transform:translateY(70px);
-  transition:all 1s ease;
+  transform:translateY(60px);
+  transition:all 0.9s ease;
 }
 .animate.show{
   opacity:1;
@@ -106,9 +129,10 @@ section{
   100%{ transform:translateY(0); }
 }
 
+/* AJUSTE MOBILE FINO */
 @media(max-width:480px){
   section{
-    margin:30px 0;
+    margin:32px 0;
   }
 }
 </style>
@@ -118,63 +142,53 @@ section{
 
 <div class="container">
 
-  <!-- HERO -->
   <section class="hero animate">
     <img src="cabezote.png" alt="Cabezote Pooh">
   </section>
 
-  <!-- NOMBRES -->
   <section class="names animate">
     <img src="jhon y diana.png" alt="Jhon y Diana">
   </section>
 
-  <!-- MENSAJE -->
   <section class="message animate">
     <img src="pooh.png" alt="Mensaje">
   </section>
 
-  <!-- FECHA -->
   <section class="date animate">
     <img src="fecha-negro.png" alt="Fecha">
   </section>
 
-  <!-- LUGAR (AGRANDADO) -->
   <section class="place animate">
     <img src="barrio tintal.png" alt="Lugar">
   </section>
 
-  <!-- BOTÓN UBICACIÓN -->
   <section class="button animate bounce">
     <a href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
       <img src="boton%20ubicaci%C3%B3n.png" alt="Ver ubicación">
     </a>
   </section>
 
-  <!-- SOLO FALTAN -->
   <section class="animate">
     <img src="contador.png" class="counter-img" alt="Solo faltan">
   </section>
 
-  <!-- CRONÓMETRO -->
   <section class="animate">
     <div class="counter-box">
       <div id="countdown"></div>
     </div>
   </section>
 
-  <!-- REGALO -->
   <section class="gift animate">
     <img src="el mejor.png" alt="Regalo">
   </section>
 
-  <!-- WHATSAPP -->
+  <!-- WHATSAPP ACTUALIZADO -->
   <section class="button animate bounce">
-    <a href="https://wa.me/573223758532?text=Hola%20Jhon%20y%20Diana%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
+    <a href="https://wa.me/573118221867?text=Hola%20Jhon%20y%20Diana%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
       <img src="boton%20whatss.png" alt="Confirmar asistencia">
     </a>
   </section>
 
-  <!-- NUEVA IMAGEN FINAL -->
   <section class="final-text animate">
     <img src="te esperamos.png" alt="Te esperamos">
   </section>
@@ -190,8 +204,7 @@ const observer = new IntersectionObserver(entries=>{
     }
   });
 },{
-  threshold:0.15,
-  rootMargin:'0px 0px -120px 0px'
+  threshold:0.15
 });
 
 document.querySelectorAll('.animate').forEach(el=>{
