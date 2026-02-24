@@ -67,25 +67,31 @@ img{
   white-space:nowrap;
 }
 
-/* BOTONES EN FILA */
-.whatsapp-row{
+/* FLOR CON BOTONES ENCIMA */
+.flor-wrapper{
+  position:relative;
+  margin-top:60px;
   display:flex;
-  align-items:center;
   justify-content:center;
-  gap:10px;
-  margin-top:30px;
+  align-items:center;
 }
 
-.whatsapp-row img{
-  width:auto;
+.flor-base{
+  width:220px; /* Ajusta tamaño si quieres más grande */
+  z-index:1;
+}
+
+.botones-sobre-flor{
+  position:absolute;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:0 10px;
+  z-index:2;
 }
 
 .boton-wsp{
   max-width:170px;
-}
-
-.flor-centro{
-  max-width:70px;
 }
 
 /* BOUNCE */
@@ -157,21 +163,23 @@ img{
     <img class="animate" src="piglet.png">
   </section>
 
-  <!-- BOTONES EN FILA CON FLOR CENTRADA -->
-  <section>
-    <div class="whatsapp-row">
+  <!-- FLOR BASE CON BOTONES ENCIMA -->
+  <section class="flor-wrapper">
 
+    <!-- FLOR -->
+    <img class="animate flor-base" src="flor-final-boton.png">
+
+    <!-- BOTONES -->
+    <div class="botones-sobre-flor">
       <a class="bounce" href="https://wa.me/573118221867?text=Hola%20Diana%20y%20Jhon%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20💛" target="_blank">
-        <img class="animate boton-wsp" src="boton diana.png">
+        <img class="boton-wsp animate" src="boton diana.png">
       </a>
-
-      <img class="animate flor-centro" src="flor-boton.png">
 
       <a class="bounce" href="https://wa.me/573134347870?text=Hola%20Jhon%20y%20Diana%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20💛" target="_blank">
-        <img class="animate boton-wsp" src="boton jhon.png">
+        <img class="boton-wsp animate" src="boton jhon.png">
       </a>
-
     </div>
+
   </section>
 
   <section>
@@ -210,7 +218,7 @@ setInterval(()=>{
   const s = Math.floor((diff%(1000*60))/1000);
 
   document.getElementById("countdown").innerHTML =
-    `${d} días · ${h}h · ${m}m · ${s}s`;
+    ${d} días · ${h}h · ${m}m · ${s}s;
 
 },1000);
 </script>
