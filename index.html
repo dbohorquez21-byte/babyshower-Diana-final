@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baby Shower</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-
 <style>
 
 html,body{
@@ -18,87 +16,96 @@ overflow-x:hidden;
 body{
 background:url('fondo rosa.png') center top no-repeat;
 background-size:cover;
-font-family:'Playfair Display', serif;
+font-family:Arial, sans-serif;
 }
 
-/* FULL WIDTH IMAGES */
-.full-img{
+/* IMAGENES FULL WIDTH */
+.full{
 width:100vw;
 display:block;
 }
 
-/* SCROLL ANIMATION */
+/* ANIMACION SCROLL */
 .hidden{
 opacity:0;
 transform:translateY(40px);
-transition:all 1s ease;
+transition:1s ease;
 }
-
 .show{
 opacity:1;
 transform:translateY(0);
 }
 
+/* UBICACION */
+.ubicacion{
+text-align:center;
+margin:30px 0;
+}
+.ubicacion img{
+width:260px;
+max-width:70vw;
+animation:bounce 1.2s infinite;
+}
+
+/* SOLO FALTAN */
+.solo{
+text-align:center;
+font-size:22px;
+margin-top:30px;
+font-style:italic;
+}
+
 /* CRONOMETRO */
 .countdown{
-font-size:28px;
+text-align:center;
+font-size:26px;
 color:#6ca3b8;
 background:#e6edf2;
 padding:15px 20px;
 border-radius:30px;
 display:inline-block;
-margin:20px auto;
+margin:15px auto 40px auto;
 }
 
-/* BOTON UBICACION */
-.btn-ubicacion{
-display:inline-block;
-margin:20px auto;
-animation:bounce 1.2s infinite;
-}
-
-.btn-ubicacion img{
-width:260px;
-max-width:60vw;
-}
-
-/* BOTONES WHATS */
-.botones-container{
+/* BOTONES CONFIRMAR */
+.confirmar{
 position:relative;
 display:flex;
 justify-content:center;
 align-items:center;
 gap:40px;
-padding:60px 20px;
+padding:120px 20px 80px 20px; /* espacio para la flor */
 }
 
-.flor-fondo{
+/* FLOR PRO */
+.flor{
 position:absolute;
-width:240px;
+width:300px;
+top:20px;
 z-index:1;
 pointer-events:none;
 }
 
-.boton-img{
+/* BOTONES */
+.boton{
 width:260px;
 max-width:40vw;
 z-index:2;
 position:relative;
-}
-
-.bounce{
 animation:bounce 1.2s infinite;
 }
 
+/* ANIMACION BOTONES */
 @keyframes bounce{
 0%{transform:translateY(0);}
 50%{transform:translateY(-6px);}
 100%{transform:translateY(0);}
 }
 
+/* RESPONSIVE */
 @media(max-width:600px){
-.boton-img{width:42vw;}
-.flor-fondo{width:200px;}
+.boton{width:42vw;}
+.flor{width:230px; top:35px;}
 .countdown{font-size:20px;}
 }
 
@@ -106,58 +113,59 @@ animation:bounce 1.2s infinite;
 </head>
 <body>
 
-<!-- HERO -->
-<img src="baby.png" class="full-img hidden">
+<!-- 1️⃣ BABY -->
+<img src="baby.png" class="full hidden">
 
-<!-- SARAH -->
-<img src="sarah.png" class="full-img hidden">
+<!-- 2️⃣ SARAH -->
+<img src="sarah.png" class="full hidden">
 
-<!-- REGALOS -->
-<img src="reaglos-1.png" class="full-img hidden">
+<!-- 3️⃣ DIRECCION 11 -->
+<img src="direccion-final-abeja.png" class="full hidden">
 
-<!-- FECHA NUEVA -->
-<img src="fecha-11-final.png" class="full-img hidden">
-
-<!-- CRONOMETRO -->
-<div class="hidden" style="text-align:center;">
-<div class="countdown" id="countdown"></div>
-</div>
-
-<!-- UBICACION -->
-<div style="text-align:center;" class="hidden">
-<a class="btn-ubicacion" href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
+<!-- 4️⃣ BOTON UBICACION -->
+<div class="ubicacion hidden">
+<a href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
 <img src="boton ubicacion.png">
 </a>
 </div>
 
-<!-- DIRECCION FINAL ABEJA -->
-<img src="direccion-final-abeja.png" class="full-img hidden">
+<!-- 5️⃣ FECHA 11 -->
+<img src="fecha-11-final.png" class="full hidden">
 
-<!-- CONFIRMAR -->
-<div class="hidden">
+<!-- 6️⃣ SOLO FALTAN -->
+<div class="solo hidden">Sólo faltan</div>
 
-<div class="botones-container">
+<div style="text-align:center;" class="hidden">
+<div class="countdown" id="countdown"></div>
+</div>
 
-<img src="flor-final-boton.png" class="flor-fondo">
+<!-- 7️⃣ REGALOS -->
+<img src="reaglos-1.png" class="full hidden">
 
-<a class="bounce" href="https://wa.me/573118221867?text=Hola Diana y Jhon, confirmo mi asistencia al baby shower." target="_blank">
-<img src="boton diana.png" class="boton-img">
+<!-- 8️⃣ PIGLET -->
+<img src="piglet.png" class="full hidden">
+
+<!-- 9️⃣ BOTONES DIANA Y JHON -->
+<div class="confirmar hidden">
+
+<img src="flor-final-boton.png" class="flor">
+
+<a href="https://wa.me/573118221867?text=Hola Diana y Jhon, confirmo mi asistencia al baby shower." target="_blank">
+<img src="boton diana.png" class="boton">
 </a>
 
-<a class="bounce" href="https://wa.me/573134347870?text=Hola Jhon y Diana, confirmo mi asistencia al baby shower." target="_blank">
-<img src="boton jhon.png" class="boton-img">
+<a href="https://wa.me/573134347870?text=Hola Jhon y Diana, confirmo mi asistencia al baby shower." target="_blank">
+<img src="boton jhon.png" class="boton">
 </a>
 
 </div>
 
-</div>
-
-<!-- TE ESPERAMOS -->
-<img src="te esperamos.png" class="full-img hidden">
+<!-- 🔟 TE ESPERAMOS -->
+<img src="te esperamos.png" class="full hidden">
 
 <script>
 
-/* SCROLL ANIMATION */
+/* ANIMACION SCROLL */
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -168,9 +176,9 @@ entry.target.classList.add('show');
 document.querySelectorAll('.hidden').forEach(el=>observer.observe(el));
 
 /* CRONOMETRO */
-const eventDate=new Date("April 11, 2026 19:00:00").getTime();
+const eventDate=new Date("April 11, 2026 13:00:00").getTime();
 
-const countdown=function(){
+function update(){
 const now=new Date().getTime();
 const distance=eventDate-now;
 
@@ -188,9 +196,9 @@ seconds+"s";
 if(distance<0){
 document.getElementById("countdown").innerHTML="¡Es hoy!";
 }
-};
+}
 
-setInterval(countdown,1000);
+setInterval(update,1000);
 
 </script>
 
