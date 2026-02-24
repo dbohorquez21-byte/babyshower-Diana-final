@@ -5,185 +5,159 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baby Shower</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;}
+
+/* RESET PARA QUITAR ESPACIO ARRIBA */
+html, body{
+  margin:0;
+  padding:0;
+}
 
 body{
   font-family:'Playfair Display', serif;
   background:url('fondo rosa.png') center top no-repeat;
   background-size:cover;
-}
-
-.container{
-  max-width:430px;
-  margin:auto;
-  padding:20px;
+  overflow-x:hidden;
   text-align:center;
 }
 
-section{
-  margin:40px 0;
-}
-
-img{
-  width:100%;
-  height:auto;
-}
-
-/* CONTADOR */
-.counter-box{
-  background:#eaf4fb;
-  border-radius:40px;
-  padding:20px;
-  max-width:380px;
-  margin:auto;
-  font-family:'Montserrat', sans-serif;
-  font-size:22px;
-  font-weight:700;
-  color:#7fb9d6;
-  white-space:nowrap;
-}
-
-/* FLOR + BOTONES */
-.flor-wrapper{
-  position:relative;
-  margin-top:60px;
-  display:flex;
-  justify-content:center;
-}
-
-.flor-wrapper img{
-  width:220px;
-}
-
-.botones{
-  position:absolute;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  padding:0 15px;
-  top:35%;
-}
-
-.botones img{
-  max-width:170px;
-}
-
-/* ANIMACIÓN */
-.animate{
+/* ANIMACIÓN SCROLL */
+.hidden{
   opacity:0;
-  transform:translateY(50px);
-  transition:all .8s ease;
+  transform:translateY(40px);
+  transition:all 1s ease;
 }
 
-.animate.show{
+.show{
   opacity:1;
   transform:translateY(0);
 }
+
+/* BOTONES */
+.bounce{
+  animation:bounce 1.2s infinite;
+}
+
+@keyframes bounce{
+  0%{ transform:translateY(0); }
+  50%{ transform:translateY(-6px); }
+  100%{ transform:translateY(0); }
+}
+
+/* CONTENEDOR GENERAL */
+.section{
+  padding:40px 20px;
+}
+
+/* BOTONES CONFIRMAR */
+.botones-container{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:40px;
+  margin-top:40px;
+}
+
+.botones-container img.flor-fondo{
+  position:absolute;
+  width:220px;
+  z-index:1;
+  pointer-events:none;
+}
+
+.botones-container a{
+  position:relative;
+  z-index:2;
+  display:inline-block;
+}
+
+.botones-container img.boton-img{
+  width:260px;
+  max-width:40vw;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .botones-container{
+    gap:20px;
+  }
+  .botones-container img.boton-img{
+    width:42vw;
+  }
+  .botones-container img.flor-fondo{
+    width:180px;
+  }
+}
+
 </style>
 </head>
-
 <body>
 
-<div class="container">
-
-<section>
-  <img class="animate" src="baby.png">
+<!-- HERO -->
+<section class="section hidden">
+  <img src="baby.png" width="90%">
 </section>
 
-<section>
-  <img class="animate" src="sarah.png">
+<!-- MENSAJE -->
+<section class="section hidden">
+  <img src="reaglos-1.png" width="90%">
 </section>
 
-<section>
-  <img class="animate" src="fecha-11-panal-1.png">
+<!-- FECHA -->
+<section class="section hidden">
+  <img src="fecha-11-panal-1.png" width="90%">
 </section>
 
-<section>
-  <img class="animate" src="direccion-abeja.png">
+<!-- DIRECCIÓN NUEVA ABEJA -->
+<section class="section hidden">
+  <img src="direccion-abeja.png" width="90%">
 </section>
 
-<section>
-  <a href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
-    <img class="animate" src="boton ubicación.png" style="max-width:300px;">
-  </a>
-</section>
+<!-- CONFIRMAR -->
+<section class="section hidden">
 
-<section>
-  <img class="animate" src="contador.png" style="max-width:120px;">
-</section>
+  <img src="piglet.png" width="70%" style="margin-bottom:20px;">
 
-<section>
-  <div class="counter-box animate" id="countdown"></div>
-</section>
+  <div class="botones-container">
 
-<section>
-  <img class="animate" src="reaglos-1.png">
-</section>
+      <!-- FLOR FONDO -->
+      <img src="flor-final-boton.png" class="flor-fondo">
 
-<section>
-  <img class="animate" src="piglet.png">
-</section>
+      <!-- BOTÓN DIANA -->
+      <a class="bounce" href="https://wa.me/573118221867?text=Hola Diana y Jhon, confirmo mi asistencia al baby shower." target="_blank">
+          <img src="boton diana.png" class="boton-img">
+      </a>
 
-<!-- FLOR BASE -->
-<section class="flor-wrapper">
+      <!-- BOTÓN JHON -->
+      <a class="bounce" href="https://wa.me/573134347870?text=Hola Jhon y Diana, confirmo mi asistencia al baby shower." target="_blank">
+          <img src="boton jhon.png" class="boton-img">
+      </a>
 
-  <img class="animate" src="flor-final-boton.png">
-
-  <div class="botones">
-    <a href="https://wa.me/573118221867?text=Hola confirmo mi asistencia" target="_blank">
-      <img class="animate" src="boton diana.png">
-    </a>
-
-    <a href="https://wa.me/573134347870?text=Hola confirmo mi asistencia" target="_blank">
-      <img class="animate" src="boton jhon.png">
-    </a>
   </div>
 
 </section>
 
-<section>
-  <img class="animate" src="te esperamos.png">
+<!-- TE ESPERAMOS -->
+<section class="section hidden">
+  <img src="te esperamos.png" width="90%">
 </section>
 
-</div>
-
 <script>
-/* SCROLL ANIMATION */
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
+
+/* ANIMACIÓN AL HACER SCROLL */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
     if(entry.isIntersecting){
       entry.target.classList.add('show');
     }
   });
 });
-document.querySelectorAll('.animate').forEach(el=>{
-  observer.observe(el);
-});
 
-/* CONTADOR SEGURO */
-const targetDate=new Date(2026,3,11,19,0,0).getTime();
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
 
-setInterval(()=>{
-  const now=Date.now();
-  const diff=targetDate-now;
-
-  if(diff<=0){
-    document.getElementById("countdown").innerHTML="Es hoy!";
-    return;
-  }
-
-  const d=Math.floor(diff/(1000*60*60*24));
-  const h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-  const m=Math.floor((diff%(1000*60*60))/(1000*60));
-  const s=Math.floor((diff%(1000*60))/1000);
-
-  document.getElementById("countdown").innerHTML=
-  d+" dias · "+h+"h · "+m+"m · "+s+"s";
-
-},1000);
 </script>
 
 </body>
