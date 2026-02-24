@@ -13,9 +13,7 @@
   --azul-claro:#eaf4fb;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 html,body{
   margin:0;
@@ -47,13 +45,6 @@ img{
   height:auto;
 }
 
-/* TAMAÑOS */
-.sarah img{ max-width:400px; }
-.fecha img{ max-width:390px; }
-.direccion img{ max-width:400px; }
-.regalos img{ max-width:420px; }
-.piglet img{ max-width:420px; }
-
 /* CONTADOR */
 .counter-box{
   background:var(--azul-claro);
@@ -73,34 +64,31 @@ img{
   font-size:23px;
   font-weight:700;
   color:var(--azul);
-  text-align:center;
-  letter-spacing:1px;
   white-space:nowrap;
 }
 
-/* BOTÓN UBICACIÓN */
-.location-btn img{
-  max-width:300px;
-}
-
-/* BOTONES WHATSAPP EN COLUMNA */
-.whatsapp-column{
+/* BOTONES EN FILA */
+.whatsapp-row{
   display:flex;
-  flex-direction:column;
   align-items:center;
-  gap:25px;
-  margin-top:20px;
+  justify-content:center;
+  gap:10px;
+  margin-top:30px;
 }
 
-.whatsapp-column img{
-  max-width:260px;
+.whatsapp-row img{
+  width:auto;
 }
 
-.flor-centro img{
-  max-width:120px;
+.boton-wsp{
+  max-width:170px;
 }
 
-/* ANIMACIÓN BOTONES */
+.flor-centro{
+  max-width:70px;
+}
+
+/* BOUNCE */
 .bounce{
   animation:bounce 1s infinite;
 }
@@ -129,30 +117,30 @@ img{
 
 <div class="container">
 
-  <section class="hero">
-    <img class="animate" src="baby.png" alt="Baby Shower">
+  <section>
+    <img class="animate" src="baby.png">
   </section>
 
-  <section class="sarah">
-    <img class="animate" src="sarah.png" alt="Sarah Valeria">
+  <section>
+    <img class="animate" src="sarah.png">
   </section>
 
-  <section class="fecha">
-    <img class="animate" src="fecha-11-panal-1.png" alt="Fecha">
+  <section>
+    <img class="animate" src="fecha-11-panal-1.png">
   </section>
 
-  <section class="direccion">
-    <img class="animate" src="direccion-abeja.png" alt="Dirección">
+  <section>
+    <img class="animate" src="direccion-abeja.png">
   </section>
 
-  <section class="location-btn">
+  <section>
     <a class="bounce" href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
-      <img class="animate" src="boton ubicación.png" alt="Ver ubicación">
+      <img class="animate" src="boton ubicación.png" style="max-width:300px;">
     </a>
   </section>
 
   <section>
-    <img class="animate" src="contador.png" style="max-width:120px;" alt="Solo faltan">
+    <img class="animate" src="contador.png" style="max-width:120px;">
   </section>
 
   <section>
@@ -161,38 +149,33 @@ img{
     </div>
   </section>
 
-  <section class="regalos">
-    <img class="animate" src="reaglos-1.png" alt="Regalos">
-  </section>
-
-  <section class="piglet">
-    <img class="animate" src="piglet.png" alt="Confirmación">
-  </section>
-
-  <!-- BOTONES CON FLOR ENTRE ELLOS -->
   <section>
-    <div class="whatsapp-column">
+    <img class="animate" src="reaglos-1.png">
+  </section>
 
-      <!-- DIANA -->
+  <section>
+    <img class="animate" src="piglet.png">
+  </section>
+
+  <!-- BOTONES EN FILA CON FLOR CENTRADA -->
+  <section>
+    <div class="whatsapp-row">
+
       <a class="bounce" href="https://wa.me/573118221867?text=Hola%20Diana%20y%20Jhon%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20💛" target="_blank">
-        <img class="animate" src="boton diana.png" alt="Confirmar con Diana">
+        <img class="animate boton-wsp" src="boton diana.png">
       </a>
 
-      <!-- FLOR -->
-      <div class="flor-centro">
-        <img class="animate" src="flor-boton.png" alt="Flor decorativa">
-      </div>
+      <img class="animate flor-centro" src="flor-boton.png">
 
-      <!-- JHON -->
       <a class="bounce" href="https://wa.me/573134347870?text=Hola%20Jhon%20y%20Diana%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20💛" target="_blank">
-        <img class="animate" src="boton jhon.png" alt="Confirmar con Jhon">
+        <img class="animate boton-wsp" src="boton jhon.png">
       </a>
 
     </div>
   </section>
 
   <section>
-    <img class="animate" src="te esperamos.png" alt="Te esperamos">
+    <img class="animate" src="te esperamos.png">
   </section>
 
 </div>
@@ -210,11 +193,16 @@ document.querySelectorAll('.animate').forEach(el=>{
   observer.observe(el);
 });
 
-const targetDate = new Date("April 11, 2026 19:00:00").getTime();
+const targetDate = new Date(2026, 3, 11, 19, 0, 0).getTime();
 
 setInterval(()=>{
   const now = Date.now();
   const diff = targetDate - now;
+
+  if(diff <= 0){
+    document.getElementById("countdown").innerHTML = "¡Es hoy!";
+    return;
+  }
 
   const d = Math.floor(diff / (1000*60*60*24));
   const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
@@ -223,6 +211,7 @@ setInterval(()=>{
 
   document.getElementById("countdown").innerHTML =
     `${d} días · ${h}h · ${m}m · ${s}s`;
+
 },1000);
 </script>
 
