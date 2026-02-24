@@ -5,25 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baby Shower</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* RESET PARA QUITAR ESPACIO ARRIBA */
 html, body{
   margin:0;
   padding:0;
+  overflow-x:hidden;
 }
 
 body{
   font-family:'Playfair Display', serif;
   background:url('fondo rosa.png') center top no-repeat;
   background-size:cover;
-  overflow-x:hidden;
-  text-align:center;
 }
 
-/* ANIMACIÓN SCROLL */
+/* SCROLL ANIMATION */
 .hidden{
   opacity:0;
   transform:translateY(40px);
@@ -33,6 +31,16 @@ body{
 .show{
   opacity:1;
   transform:translateY(0);
+}
+
+.section{
+  padding:0;
+}
+
+.full-img{
+  width:100vw;
+  max-width:100%;
+  display:block;
 }
 
 /* BOTONES */
@@ -46,24 +54,18 @@ body{
   100%{ transform:translateY(0); }
 }
 
-/* CONTENEDOR GENERAL */
-.section{
-  padding:40px 20px;
-}
-
-/* BOTONES CONFIRMAR */
 .botones-container{
   position:relative;
   display:flex;
   justify-content:center;
   align-items:center;
   gap:40px;
-  margin-top:40px;
+  padding:60px 20px;
 }
 
 .botones-container img.flor-fondo{
   position:absolute;
-  width:220px;
+  width:240px;
   z-index:1;
   pointer-events:none;
 }
@@ -71,7 +73,6 @@ body{
 .botones-container a{
   position:relative;
   z-index:2;
-  display:inline-block;
 }
 
 .botones-container img.boton-img{
@@ -79,16 +80,12 @@ body{
   max-width:40vw;
 }
 
-/* RESPONSIVE */
 @media(max-width:600px){
-  .botones-container{
-    gap:20px;
-  }
   .botones-container img.boton-img{
     width:42vw;
   }
   .botones-container img.flor-fondo{
-    width:180px;
+    width:200px;
   }
 }
 
@@ -96,42 +93,32 @@ body{
 </head>
 <body>
 
-<!-- HERO -->
 <section class="section hidden">
-  <img src="baby.png" width="90%">
+  <img src="baby.png" class="full-img">
 </section>
 
-<!-- MENSAJE -->
 <section class="section hidden">
-  <img src="reaglos-1.png" width="90%">
+  <img src="reaglos-1.png" class="full-img">
 </section>
 
-<!-- FECHA -->
 <section class="section hidden">
-  <img src="fecha-11-panal-1.png" width="90%">
+  <img src="fecha-11-panal-1.png" class="full-img">
 </section>
 
-<!-- DIRECCIÓN NUEVA (CORREGIDA) -->
 <section class="section hidden">
-  <img src="direccion-final-abeja.png" width="90%">
+  <img src="direccion-final-abeja.png" class="full-img">
 </section>
 
-<!-- CONFIRMAR -->
 <section class="section hidden">
-
-  <img src="piglet.png" width="70%" style="margin-bottom:20px;">
 
   <div class="botones-container">
 
-      <!-- FLOR FONDO -->
       <img src="flor-final-boton.png" class="flor-fondo">
 
-      <!-- BOTÓN DIANA -->
       <a class="bounce" href="https://wa.me/573118221867?text=Hola Diana y Jhon, confirmo mi asistencia al baby shower." target="_blank">
           <img src="boton diana.png" class="boton-img">
       </a>
 
-      <!-- BOTÓN JHON -->
       <a class="bounce" href="https://wa.me/573134347870?text=Hola Jhon y Diana, confirmo mi asistencia al baby shower." target="_blank">
           <img src="boton jhon.png" class="boton-img">
       </a>
@@ -140,14 +127,11 @@ body{
 
 </section>
 
-<!-- TE ESPERAMOS -->
 <section class="section hidden">
-  <img src="te esperamos.png" width="90%">
+  <img src="te esperamos.png" class="full-img">
 </section>
 
 <script>
-
-/* ANIMACIÓN AL HACER SCROLL */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -155,9 +139,7 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 });
-
 document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
-
 </script>
 
 </body>
