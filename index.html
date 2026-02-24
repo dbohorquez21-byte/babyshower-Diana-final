@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Baby Shower Diana</title>
+<title>Baby Shower Sarah Valeria</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
@@ -17,7 +17,7 @@
   box-sizing:border-box;
 }
 
-html, body{
+html,body{
   margin:0;
   padding:0;
   width:100%;
@@ -42,38 +42,29 @@ section{
   margin:40px 0;
 }
 
-.hero{
-  margin:0;
-}
-.hero img{
-  width:100%;
-  max-height:95vh;
-  object-fit:contain;
-}
-
-.names img,
-.message img,
-.date img,
-.place img,
-.gift img,
-.final-text img{
+img{
   width:100%;
   height:auto;
 }
 
-.names img{ max-width:400px; }
-.message img{ max-width:420px; }
-.date img{ max-width:380px; }
-.place img{ max-width:360px; }
-.gift img{ max-width:420px; }
-.final-text img{ max-width:420px; }
-
-.counter-img{
-  max-width:120px;
-  width:100%;
+/* HERO */
+.hero{
+  margin:0;
+}
+.hero img{
+  max-height:95vh;
+  object-fit:contain;
 }
 
-/* 🔥 CONTADOR CORREGIDO */
+/* TAMAÑOS PERSONALIZADOS */
+.sarah img{ max-width:400px; }
+.fecha img{ max-width:390px; }
+.direccion img{ max-width:400px; }
+.regalos img{ max-width:420px; }
+.piglet img{ max-width:420px; }
+.flor img{ max-width:120px; margin:20px auto; }
+
+/* CONTADOR */
 .counter-box{
   background:var(--azul-claro);
   border-radius:40px;
@@ -89,7 +80,7 @@ section{
 
 #countdown{
   font-family:'Montserrat', sans-serif;
-  font-size:23px; /* 3px más pequeño */
+  font-size:23px;
   font-weight:700;
   color:var(--azul);
   text-align:center;
@@ -100,10 +91,9 @@ section{
 /* BOTÓN UBICACIÓN */
 .location-btn img{
   max-width:300px;
-  width:100%;
 }
 
-/* 🔥 BOTONES WHATSAPP MÁS GRANDES */
+/* BOTONES WHATSAPP */
 .whatsapp-row{
   display:flex;
   justify-content:center;
@@ -117,10 +107,10 @@ section{
 
 .whatsapp-row img{
   width:100%;
-  max-width:210px; /* MÁS GRANDES */
+  max-width:210px;
 }
 
-/* ✨ ANIMACIÓN SUAVE */
+/* ANIMACIÓN BOUNCE */
 .bounce{
   animation:bounce 1s infinite;
 }
@@ -131,7 +121,7 @@ section{
   100%{ transform:translateY(0); }
 }
 
-/* ANIMACIÓN SCROLL */
+/* SCROLL ANIMATION */
 .animate{
   opacity:0;
   transform:translateY(60px);
@@ -154,63 +144,77 @@ section{
 
 <div class="container">
 
+  <!-- HERO -->
   <section class="hero animate">
-    <img src="cabezote.png" alt="Cabezote Pooh">
+    <img src="baby.png" alt="Baby Shower">
   </section>
 
-  <section class="names animate">
-    <img src="jhon y diana.png" alt="Jhon y Diana">
+  <!-- SARAH -->
+  <section class="sarah animate">
+    <img src="sarah.png" alt="Sarah Valeria">
   </section>
 
-  <section class="message animate">
-    <img src="pooh.png" alt="Mensaje">
+  <!-- MENSAJE CON POOH -->
+  <section class="animate">
+    <img src="flor-boton.png" alt="Flor decorativa">
   </section>
 
-  <section class="date animate">
-    <img src="fecha-11-br.png" alt="Fecha">
+  <!-- FECHA -->
+  <section class="fecha animate">
+    <img src="fecha-11-panal-1.png" alt="Fecha">
   </section>
 
-  <section class="place animate">
-    <img src="barrio tintal.png" alt="Lugar">
+  <!-- DIRECCIÓN -->
+  <section class="direccion animate">
+    <img src="direccion-abeja.png" alt="Dirección">
   </section>
 
-  <!-- 🔥 BOTÓN UBICACIÓN RESTAURADO -->
+  <!-- BOTÓN UBICACIÓN -->
   <section class="location-btn animate bounce">
     <a href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
       <img src="boton%20ubicaci%C3%B3n.png" alt="Ver ubicación">
     </a>
   </section>
 
+  <!-- SOLO FALTAN -->
   <section class="animate">
-    <img src="contador.png" class="counter-img" alt="Solo faltan">
+    <img src="contador.png" style="max-width:120px;" alt="Solo faltan">
   </section>
 
+  <!-- CONTADOR -->
   <section class="animate">
     <div class="counter-box">
       <div id="countdown"></div>
     </div>
   </section>
 
-  <section class="gift animate">
-    <img src="el mejor.png" alt="Regalo">
+  <!-- REGALOS -->
+  <section class="regalos animate">
+    <img src="reaglos-1.png" alt="Regalos">
   </section>
 
-  <!-- 🔥 DOS BOTONES GRANDES CON ANIMACIÓN -->
+  <!-- PIGLET MENSAJE -->
+  <section class="piglet animate">
+    <img src="piglet.png" alt="Confirmación">
+  </section>
+
+  <!-- BOTONES WHATSAPP -->
   <section class="animate">
     <div class="whatsapp-row">
-      
-      <a class="bounce" href="https://wa.me/573134347870?text=Hola%20Jhon%20y%20Diana%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
-        <img src="boton jhon.png" alt="Confirmar con Jhon">
-      </a>
 
       <a class="bounce" href="https://wa.me/573118221867?text=Hola%20Diana%20y%20Jhon%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
         <img src="boton diana.png" alt="Confirmar con Diana">
       </a>
 
+      <a class="bounce" href="https://wa.me/573134347870?text=Hola%20Jhon%20y%20Diana%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
+        <img src="boton jhon.png" alt="Confirmar con Jhon">
+      </a>
+
     </div>
   </section>
 
-  <section class="final-text animate">
+  <!-- TE ESPERAMOS -->
+  <section class="animate">
     <img src="te esperamos.png" alt="Te esperamos">
   </section>
 
@@ -230,6 +234,7 @@ document.querySelectorAll('.animate').forEach(el=>{
   observer.observe(el);
 });
 
+/* CONTADOR FINAL */
 const targetDate = new Date("April 11, 2026 19:00:00").getTime();
 
 setInterval(()=>{
