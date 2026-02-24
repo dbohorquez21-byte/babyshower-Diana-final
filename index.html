@@ -3,24 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Baby Shower Sarah Valeria</title>
+<title>Baby Shower</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --azul:#7fb9d6;
-  --azul-claro:#eaf4fb;
-}
-
-*{ box-sizing:border-box; }
-
-html,body{
-  margin:0;
-  padding:0;
-  width:100%;
-  overflow-x:hidden;
-}
+*{box-sizing:border-box;margin:0;padding:0;}
 
 body{
   font-family:'Playfair Display', serif;
@@ -29,10 +17,9 @@ body{
 }
 
 .container{
-  width:100%;
   max-width:430px;
-  margin:0 auto;
-  padding:0 20px 140px;
+  margin:auto;
+  padding:20px;
   text-align:center;
 }
 
@@ -47,74 +34,53 @@ img{
 
 /* CONTADOR */
 .counter-box{
-  background:var(--azul-claro);
+  background:#eaf4fb;
   border-radius:40px;
-  padding:22px 20px;
-  margin:20px auto 0;
-  width:100%;
+  padding:20px;
   max-width:380px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-
-#countdown{
+  margin:auto;
   font-family:'Montserrat', sans-serif;
-  font-size:23px;
+  font-size:22px;
   font-weight:700;
-  color:var(--azul);
+  color:#7fb9d6;
   white-space:nowrap;
 }
 
-/* FLOR CON BOTONES ENCIMA */
+/* FLOR + BOTONES */
 .flor-wrapper{
   position:relative;
   margin-top:60px;
   display:flex;
   justify-content:center;
-  align-items:center;
 }
 
-.flor-base{
-  width:220px; /* Ajusta tamaño si quieres más grande */
-  z-index:1;
+.flor-wrapper img{
+  width:220px;
 }
 
-.botones-sobre-flor{
+.botones{
   position:absolute;
   width:100%;
   display:flex;
   justify-content:space-between;
-  padding:0 10px;
-  z-index:2;
+  padding:0 15px;
+  top:35%;
 }
 
-.boton-wsp{
+.botones img{
   max-width:170px;
 }
 
-/* BOUNCE */
-.bounce{
-  animation:bounce 1s infinite;
-}
-
-@keyframes bounce{
-  0%{ transform:translateY(0); }
-  50%{ transform:translateY(-6px); }
-  100%{ transform:translateY(0); }
-}
-
-/* ANIMACIÓN SCROLL */
+/* ANIMACIÓN */
 .animate{
   opacity:0;
-  transform:translateY(60px) scale(.95);
-  transition:all 0.9s ease;
+  transform:translateY(50px);
+  transition:all .8s ease;
 }
 
 .animate.show{
   opacity:1;
-  transform:translateY(0) scale(1);
+  transform:translateY(0);
 }
 </style>
 </head>
@@ -123,102 +89,99 @@ img{
 
 <div class="container">
 
-  <section>
-    <img class="animate" src="baby.png">
-  </section>
+<section>
+  <img class="animate" src="baby.png">
+</section>
 
-  <section>
-    <img class="animate" src="sarah.png">
-  </section>
+<section>
+  <img class="animate" src="sarah.png">
+</section>
 
-  <section>
-    <img class="animate" src="fecha-11-panal-1.png">
-  </section>
+<section>
+  <img class="animate" src="fecha-11-panal-1.png">
+</section>
 
-  <section>
-    <img class="animate" src="direccion-abeja.png">
-  </section>
+<section>
+  <img class="animate" src="direccion-abeja.png">
+</section>
 
-  <section>
-    <a class="bounce" href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
-      <img class="animate" src="boton ubicación.png" style="max-width:300px;">
+<section>
+  <a href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
+    <img class="animate" src="boton ubicación.png" style="max-width:300px;">
+  </a>
+</section>
+
+<section>
+  <img class="animate" src="contador.png" style="max-width:120px;">
+</section>
+
+<section>
+  <div class="counter-box animate" id="countdown"></div>
+</section>
+
+<section>
+  <img class="animate" src="reaglos-1.png">
+</section>
+
+<section>
+  <img class="animate" src="piglet.png">
+</section>
+
+<!-- FLOR BASE -->
+<section class="flor-wrapper">
+
+  <img class="animate" src="flor-final-boton.png">
+
+  <div class="botones">
+    <a href="https://wa.me/573118221867?text=Hola confirmo mi asistencia" target="_blank">
+      <img class="animate" src="boton diana.png">
     </a>
-  </section>
 
-  <section>
-    <img class="animate" src="contador.png" style="max-width:120px;">
-  </section>
+    <a href="https://wa.me/573134347870?text=Hola confirmo mi asistencia" target="_blank">
+      <img class="animate" src="boton jhon.png">
+    </a>
+  </div>
 
-  <section>
-    <div class="counter-box animate">
-      <div id="countdown"></div>
-    </div>
-  </section>
+</section>
 
-  <section>
-    <img class="animate" src="reaglos-1.png">
-  </section>
-
-  <section>
-    <img class="animate" src="piglet.png">
-  </section>
-
-  <!-- FLOR BASE CON BOTONES ENCIMA -->
-  <section class="flor-wrapper">
-
-    <!-- FLOR -->
-    <img class="animate flor-base" src="flor-final-boton.png">
-
-    <!-- BOTONES -->
-    <div class="botones-sobre-flor">
-      <a class="bounce" href="https://wa.me/573118221867?text=Hola%20Diana%20y%20Jhon%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20💛" target="_blank">
-        <img class="boton-wsp animate" src="boton diana.png">
-      </a>
-
-      <a class="bounce" href="https://wa.me/573134347870?text=Hola%20Jhon%20y%20Diana%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20💛" target="_blank">
-        <img class="boton-wsp animate" src="boton jhon.png">
-      </a>
-    </div>
-
-  </section>
-
-  <section>
-    <img class="animate" src="te esperamos.png">
-  </section>
+<section>
+  <img class="animate" src="te esperamos.png">
+</section>
 
 </div>
 
 <script>
-const observer = new IntersectionObserver(entries=>{
+/* SCROLL ANIMATION */
+const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add('show');
     }
   });
-},{ threshold:0.2 });
-
+});
 document.querySelectorAll('.animate').forEach(el=>{
   observer.observe(el);
 });
 
-const targetDate = new Date(2026, 3, 11, 19, 0, 0).getTime();
+/* CONTADOR SEGURO */
+const targetDate=new Date(2026,3,11,19,0,0).getTime();
 
 setInterval(()=>{
-  const now = Date.now();
-  const diff = targetDate - now;
+  const now=Date.now();
+  const diff=targetDate-now;
 
-  if(diff <= 0){
-    document.getElementById("countdown").innerHTML = "¡Es hoy!";
+  if(diff<=0){
+    document.getElementById("countdown").innerHTML="Es hoy!";
     return;
   }
 
-  const d = Math.floor(diff / (1000*60*60*24));
-  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-  const m = Math.floor((diff%(1000*60*60))/(1000*60));
-  const s = Math.floor((diff%(1000*60))/1000);
+  const d=Math.floor(diff/(1000*60*60*24));
+  const h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m=Math.floor((diff%(1000*60*60))/(1000*60));
+  const s=Math.floor((diff%(1000*60))/1000);
 
-  document.getElementById("countdown").innerHTML =
-    ${d} días · ${h}h · ${m}m · ${s}s;
+  document.getElementById("countdown").innerHTML=
+  d+" dias · "+h+"h · "+m+"m · "+s+"s";
 
 },1000);
 </script>
