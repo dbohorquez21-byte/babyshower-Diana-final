@@ -9,137 +9,189 @@
 
 <style>
 
-html, body{
-  margin:0;
-  padding:0;
-  overflow-x:hidden;
+html,body{
+margin:0;
+padding:0;
+overflow-x:hidden;
 }
 
 body{
-  font-family:'Playfair Display', serif;
-  background:url('fondo rosa.png') center top no-repeat;
-  background-size:cover;
+background:url('fondo rosa.png') center top no-repeat;
+background-size:cover;
+font-family:'Playfair Display', serif;
+}
+
+/* FULL WIDTH IMAGES */
+.full-img{
+width:100vw;
+display:block;
 }
 
 /* SCROLL ANIMATION */
 .hidden{
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 1s ease;
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
 }
 
 .show{
-  opacity:1;
-  transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
 
-.section{
-  padding:0;
+/* CRONOMETRO */
+.countdown{
+font-size:28px;
+color:#6ca3b8;
+background:#e6edf2;
+padding:15px 20px;
+border-radius:30px;
+display:inline-block;
+margin:20px auto;
 }
 
-.full-img{
-  width:100vw;
-  max-width:100%;
-  display:block;
+/* BOTON UBICACION */
+.btn-ubicacion{
+display:inline-block;
+margin:20px auto;
+animation:bounce 1.2s infinite;
 }
 
-/* BOTONES */
+.btn-ubicacion img{
+width:260px;
+max-width:60vw;
+}
+
+/* BOTONES WHATS */
+.botones-container{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+padding:60px 20px;
+}
+
+.flor-fondo{
+position:absolute;
+width:240px;
+z-index:1;
+pointer-events:none;
+}
+
+.boton-img{
+width:260px;
+max-width:40vw;
+z-index:2;
+position:relative;
+}
+
 .bounce{
-  animation:bounce 1.2s infinite;
+animation:bounce 1.2s infinite;
 }
 
 @keyframes bounce{
-  0%{ transform:translateY(0); }
-  50%{ transform:translateY(-6px); }
-  100%{ transform:translateY(0); }
-}
-
-.botones-container{
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:40px;
-  padding:60px 20px;
-}
-
-.botones-container img.flor-fondo{
-  position:absolute;
-  width:240px;
-  z-index:1;
-  pointer-events:none;
-}
-
-.botones-container a{
-  position:relative;
-  z-index:2;
-}
-
-.botones-container img.boton-img{
-  width:260px;
-  max-width:40vw;
+0%{transform:translateY(0);}
+50%{transform:translateY(-6px);}
+100%{transform:translateY(0);}
 }
 
 @media(max-width:600px){
-  .botones-container img.boton-img{
-    width:42vw;
-  }
-  .botones-container img.flor-fondo{
-    width:200px;
-  }
+.boton-img{width:42vw;}
+.flor-fondo{width:200px;}
+.countdown{font-size:20px;}
 }
 
 </style>
 </head>
 <body>
 
-<section class="section hidden">
-  <img src="baby.png" class="full-img">
-</section>
+<!-- HERO -->
+<img src="baby.png" class="full-img hidden">
 
-<section class="section hidden">
-  <img src="reaglos-1.png" class="full-img">
-</section>
+<!-- SARAH -->
+<img src="sarah.png" class="full-img hidden">
 
-<section class="section hidden">
-  <img src="fecha-11-panal-1.png" class="full-img">
-</section>
+<!-- REGALOS -->
+<img src="reaglos-1.png" class="full-img hidden">
 
-<section class="section hidden">
-  <img src="direccion-final-abeja.png" class="full-img">
-</section>
+<!-- FECHA NUEVA -->
+<img src="fecha-11-final.png" class="full-img hidden">
 
-<section class="section hidden">
+<!-- CRONOMETRO -->
+<div class="hidden" style="text-align:center;">
+<div class="countdown" id="countdown"></div>
+</div>
 
-  <div class="botones-container">
+<!-- UBICACION -->
+<div style="text-align:center;" class="hidden">
+<a class="btn-ubicacion" href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
+<img src="boton ubicacion.png">
+</a>
+</div>
 
-      <img src="flor-final-boton.png" class="flor-fondo">
+<!-- DIRECCION FINAL ABEJA -->
+<img src="direccion-final-abeja.png" class="full-img hidden">
 
-      <a class="bounce" href="https://wa.me/573118221867?text=Hola Diana y Jhon, confirmo mi asistencia al baby shower." target="_blank">
-          <img src="boton diana.png" class="boton-img">
-      </a>
+<!-- CONFIRMAR -->
+<div class="hidden">
 
-      <a class="bounce" href="https://wa.me/573134347870?text=Hola Jhon y Diana, confirmo mi asistencia al baby shower." target="_blank">
-          <img src="boton jhon.png" class="boton-img">
-      </a>
+<div class="botones-container">
 
-  </div>
+<img src="flor-final-boton.png" class="flor-fondo">
 
-</section>
+<a class="bounce" href="https://wa.me/573118221867?text=Hola Diana y Jhon, confirmo mi asistencia al baby shower." target="_blank">
+<img src="boton diana.png" class="boton-img">
+</a>
 
-<section class="section hidden">
-  <img src="te esperamos.png" class="full-img">
-</section>
+<a class="bounce" href="https://wa.me/573134347870?text=Hola Jhon y Diana, confirmo mi asistencia al baby shower." target="_blank">
+<img src="boton jhon.png" class="boton-img">
+</a>
+
+</div>
+
+</div>
+
+<!-- TE ESPERAMOS -->
+<img src="te esperamos.png" class="full-img hidden">
 
 <script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
+
+/* SCROLL ANIMATION */
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
 });
-document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+});
+document.querySelectorAll('.hidden').forEach(el=>observer.observe(el));
+
+/* CRONOMETRO */
+const eventDate=new Date("April 11, 2026 19:00:00").getTime();
+
+const countdown=function(){
+const now=new Date().getTime();
+const distance=eventDate-now;
+
+const days=Math.floor(distance/(1000*60*60*24));
+const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds=Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML=
+days+" días · "+
+hours+"h · "+
+minutes+"m · "+
+seconds+"s";
+
+if(distance<0){
+document.getElementById("countdown").innerHTML="¡Es hoy!";
+}
+};
+
+setInterval(countdown,1000);
+
 </script>
 
 </body>
