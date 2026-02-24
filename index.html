@@ -47,22 +47,12 @@ img{
   height:auto;
 }
 
-/* HERO */
-.hero{
-  margin:0;
-}
-.hero img{
-  max-height:95vh;
-  object-fit:contain;
-}
-
-/* TAMAÑOS PERSONALIZADOS */
+/* TAMAÑOS */
 .sarah img{ max-width:400px; }
 .fecha img{ max-width:390px; }
 .direccion img{ max-width:400px; }
 .regalos img{ max-width:420px; }
 .piglet img{ max-width:420px; }
-.flor img{ max-width:120px; margin:20px auto; }
 
 /* CONTADOR */
 .counter-box{
@@ -93,24 +83,24 @@ img{
   max-width:300px;
 }
 
-/* BOTONES WHATSAPP */
-.whatsapp-row{
+/* BOTONES WHATSAPP EN COLUMNA */
+.whatsapp-column{
   display:flex;
-  justify-content:center;
-  gap:15px;
+  flex-direction:column;
+  align-items:center;
+  gap:25px;
   margin-top:20px;
 }
 
-.whatsapp-row a{
-  flex:1;
+.whatsapp-column img{
+  max-width:260px;
 }
 
-.whatsapp-row img{
-  width:100%;
-  max-width:210px;
+.flor-centro img{
+  max-width:120px;
 }
 
-/* ANIMACIÓN BOUNCE */
+/* ANIMACIÓN BOTONES */
 .bounce{
   animation:bounce 1s infinite;
 }
@@ -121,21 +111,16 @@ img{
   100%{ transform:translateY(0); }
 }
 
-/* SCROLL ANIMATION */
+/* ANIMACIÓN SCROLL */
 .animate{
   opacity:0;
-  transform:translateY(60px);
+  transform:translateY(60px) scale(.95);
   transition:all 0.9s ease;
 }
+
 .animate.show{
   opacity:1;
-  transform:translateY(0);
-}
-
-@media(max-width:430px){
-  .whatsapp-row img{
-    max-width:180px;
-  }
+  transform:translateY(0) scale(1);
 }
 </style>
 </head>
@@ -144,78 +129,70 @@ img{
 
 <div class="container">
 
-  <!-- HERO -->
-  <section class="hero animate">
-    <img src="baby.png" alt="Baby Shower">
+  <section class="hero">
+    <img class="animate" src="baby.png" alt="Baby Shower">
   </section>
 
-  <!-- SARAH -->
-  <section class="sarah animate">
-    <img src="sarah.png" alt="Sarah Valeria">
+  <section class="sarah">
+    <img class="animate" src="sarah.png" alt="Sarah Valeria">
   </section>
 
-  <!-- MENSAJE CON POOH -->
-  <section class="animate">
-    <img src="flor-boton.png" alt="Flor decorativa">
+  <section class="fecha">
+    <img class="animate" src="fecha-11-panal-1.png" alt="Fecha">
   </section>
 
-  <!-- FECHA -->
-  <section class="fecha animate">
-    <img src="fecha-11-panal-1.png" alt="Fecha">
+  <section class="direccion">
+    <img class="animate" src="direccion-abeja.png" alt="Dirección">
   </section>
 
-  <!-- DIRECCIÓN -->
-  <section class="direccion animate">
-    <img src="direccion-abeja.png" alt="Dirección">
-  </section>
-
-  <!-- BOTÓN UBICACIÓN -->
-  <section class="location-btn animate bounce">
-    <a href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
-      <img src="boton%20ubicaci%C3%B3n.png" alt="Ver ubicación">
+  <section class="location-btn">
+    <a class="bounce" href="https://maps.app.goo.gl/JPxGnSz6gFjVA6rb6" target="_blank">
+      <img class="animate" src="boton ubicación.png" alt="Ver ubicación">
     </a>
   </section>
 
-  <!-- SOLO FALTAN -->
-  <section class="animate">
-    <img src="contador.png" style="max-width:120px;" alt="Solo faltan">
+  <section>
+    <img class="animate" src="contador.png" style="max-width:120px;" alt="Solo faltan">
   </section>
 
-  <!-- CONTADOR -->
-  <section class="animate">
-    <div class="counter-box">
+  <section>
+    <div class="counter-box animate">
       <div id="countdown"></div>
     </div>
   </section>
 
-  <!-- REGALOS -->
-  <section class="regalos animate">
-    <img src="reaglos-1.png" alt="Regalos">
+  <section class="regalos">
+    <img class="animate" src="reaglos-1.png" alt="Regalos">
   </section>
 
-  <!-- PIGLET MENSAJE -->
-  <section class="piglet animate">
-    <img src="piglet.png" alt="Confirmación">
+  <section class="piglet">
+    <img class="animate" src="piglet.png" alt="Confirmación">
   </section>
 
-  <!-- BOTONES WHATSAPP -->
-  <section class="animate">
-    <div class="whatsapp-row">
+  <!-- BOTONES CON FLOR ENTRE ELLOS -->
+  <section>
+    <div class="whatsapp-column">
 
-      <a class="bounce" href="https://wa.me/573118221867?text=Hola%20Diana%20y%20Jhon%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
-        <img src="boton diana.png" alt="Confirmar con Diana">
+      <!-- DIANA -->
+      <a class="bounce" href="https://wa.me/573118221867?text=Hola%20Diana%20y%20Jhon%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20💛" target="_blank">
+        <img class="animate" src="boton diana.png" alt="Confirmar con Diana">
       </a>
 
-      <a class="bounce" href="https://wa.me/573134347870?text=Hola%20Jhon%20y%20Diana%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20%F0%9F%92%9B" target="_blank">
-        <img src="boton jhon.png" alt="Confirmar con Jhon">
+      <!-- FLOR -->
+      <div class="flor-centro">
+        <img class="animate" src="flor-boton.png" alt="Flor decorativa">
+      </div>
+
+      <!-- JHON -->
+      <a class="bounce" href="https://wa.me/573134347870?text=Hola%20Jhon%20y%20Diana%2C%20confirmo%20mi%20asistencia%20al%20baby%20shower%20💛" target="_blank">
+        <img class="animate" src="boton jhon.png" alt="Confirmar con Jhon">
       </a>
 
     </div>
   </section>
 
-  <!-- TE ESPERAMOS -->
-  <section class="animate">
-    <img src="te esperamos.png" alt="Te esperamos">
+  <section>
+    <img class="animate" src="te esperamos.png" alt="Te esperamos">
   </section>
 
 </div>
@@ -225,16 +202,14 @@ const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add('show');
-      observer.unobserve(entry.target);
     }
   });
-},{ threshold:0.15 });
+},{ threshold:0.2 });
 
 document.querySelectorAll('.animate').forEach(el=>{
   observer.observe(el);
 });
 
-/* CONTADOR FINAL */
 const targetDate = new Date("April 11, 2026 19:00:00").getTime();
 
 setInterval(()=>{
@@ -247,7 +222,7 @@ setInterval(()=>{
   const s = Math.floor((diff%(1000*60))/1000);
 
   document.getElementById("countdown").innerHTML =
-    `${d} días · ${h}h · ${m}m · ${s}s`;
+    ${d} días · ${h}h · ${m}m · ${s}s;
 },1000);
 </script>
 
